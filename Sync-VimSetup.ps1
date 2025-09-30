@@ -23,6 +23,7 @@ Start-Process powershell -Verb RunAs -ArgumentList @(
 New-Item $nvimcfg -ItemType Directory -Force
 
 @(
+    "init.vim"
     "Sync-VimSetup.ps1"
     ".git"
 
