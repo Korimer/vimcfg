@@ -16,6 +16,7 @@ Start-Process powershell -Verb RunAs -ArgumentList @(
     @(
         "cd $(Get-Location)"
         "mv '$nvide' '$nvimbin' -Force"
+        "mv lua $nvimbin"
         "mv '$redirect' '$nvimlink' -Force"
     ) -join ';'
 )
@@ -27,6 +28,7 @@ New-Item $nvimcfg -ItemType Directory -Force
     "Sync-VimSetup.ps1"
     ".git"
 
+<<<<<<< HEAD
 ) | % { mv $_ $nvimcfg}
 
 Remove-Item "Sync-VimSetup.ps1"
@@ -34,3 +36,6 @@ Remove-Item "Sync-VimSetup.ps1"
 if (-not(Test-Path *)) {
     Get-Location | Split-Path -Leaf | % {cd ..; Remove-Item $_}
 }
+=======
+) | % {mv $_ $nvimcfg}
+>>>>>>> bf70714 (lkazyvim)
