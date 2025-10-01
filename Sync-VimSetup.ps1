@@ -24,18 +24,7 @@ Start-Process powershell -Verb RunAs -ArgumentList @(
 New-Item $nvimcfg -ItemType Directory -Force
 
 @(
-    "init.vim"
+    "init.lua"
     "Sync-VimSetup.ps1"
     ".git"
-
-<<<<<<< HEAD
-) | % { mv $_ $nvimcfg}
-
-Remove-Item "Sync-VimSetup.ps1"
-
-if (-not(Test-Path *)) {
-    Get-Location | Split-Path -Leaf | % {cd ..; Remove-Item $_}
-}
-=======
 ) | % {mv $_ $nvimcfg}
->>>>>>> bf70714 (lkazyvim)
