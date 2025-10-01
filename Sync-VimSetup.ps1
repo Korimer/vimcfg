@@ -27,4 +27,10 @@ New-Item $nvimcfg -ItemType Directory -Force
     "Sync-VimSetup.ps1"
     ".git"
 
-) | mv $nvimcfg
+) | % { mv $_ $nvimcfg}
+
+Remove-Item "Sync-VimSetup.ps1"
+
+if (-not(Test-Path *)) {
+    Get-Location | Split-Path -Leaf | % {cd ..; Remove-Item $_}
+}
