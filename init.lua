@@ -1,2 +1,2 @@
-require('config.lazy')
-require('tweaks')
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")
