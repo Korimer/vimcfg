@@ -7,28 +7,27 @@ function file_exists(file)
 end
 
 function onEnter()
-  if file_exists(default_location)
-    
+  if file_exists(default_location) then
+    vim.print("it exists")
   end
 end
 
-function onExit() {
+function onExit() 
   if vim.this_session then 
     vim.cmd("mks! " .. vim.this_session)
     os.remove(default_location)
   else
     vim.cmd("mks! " .. default_location)
   end
-}
+end
 
 vim.api.nvim_create_autocmd({'VimEnter'}, {
   pattern = '*',
   group = autogroup,
   command = ''
-  }
 })
 
-local autogroup = vim.api.nvim_create_autogroup('AutoSessions', {clear = false})
+local autogroup = vim.api.nvim_create_augroup('AutoSessions', {clear = false})
 
 vim.api.nvim_create_autocmd("VimLeave", {
   pattern = "*",
@@ -36,5 +35,5 @@ vim.api.nvim_create_autocmd("VimLeave", {
   callback = onExit
 })
 
-vim.print("this at least ran lmfao")
+vim.print(file_exists(default_location))
 
