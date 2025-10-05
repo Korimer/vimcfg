@@ -4,3 +4,5 @@ vim.keymap.set('c', '<Left>',  function() return vim.fn.wildmenumode() ~= 0 and 
 vim.keymap.set('c', '<Right>', function() return vim.fn.wildmenumode() ~= 0 and '<BS><C-Z>' or '<Right>' end, { expr = true })
 
 -- vim.opt.noh = true;
+
+vim.print("this ran btw")
