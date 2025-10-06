@@ -7,9 +7,13 @@ function file_exists(file)
 end
 
 function onEnter()
-  if file_exists(default_location) then
-    vim.print("it exists")
-  end
+    vim.print("file location is: " .. default_location)
+    if file_exists(default_location) then
+      vim.print("Session Memory: Loading default session")
+      vim.cmd("source " .. default_location)
+    else
+      vim.print("No default session found.")
+    end
 end
 
 function onExit() 
@@ -21,19 +25,18 @@ function onExit()
   end
 end
 
-vim.api.nvim_create_autocmd({'VimEnter'}, {
-  pattern = '*',
-  group = autogroup,
-  command = ''
+local autogroup = vim.api.nvim_create_augroup('AutoSessions', {clear = true})
+
+vim.api.nvim_create_autocmd('VimEnter', {
+  group=autogroup,
+  callback=onEnter
 })
 
-local autogroup = vim.api.nvim_create_augroup('AutoSessions', {clear = false})
-
 vim.api.nvim_create_autocmd("VimLeave", {
-  pattern = "*",
   group=autogroup,
   callback = onExit
 })
 
 vim.print(file_exists(default_location))
+
 

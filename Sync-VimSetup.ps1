@@ -3,6 +3,7 @@ winget install Neovim.Neovim
 $nvide = 'neovide.exe'
 $nvimbin = 'C:\Program Files\Neovim\bin'
 $nvimcfg = "$env:USERPROFILE\AppData\Local\nvim"
+$nvimsessions = "$home\vimsessions"
 
 Invoke-Webrequest 'https://github.com/neovide/neovide/releases/latest/download/neovide.exe.zip' -OutFile "$nvide.zip"
 7z x "$nvide.zip"
@@ -22,6 +23,7 @@ Start-Process powershell -Verb RunAs -ArgumentList @(
 )
 
 New-Item $nvimcfg -ItemType Directory -Force
+New-Item $nvimsessions -ItemType Directory -Force
 
 @(
     "init.lua"
