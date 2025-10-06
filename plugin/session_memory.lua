@@ -18,7 +18,7 @@ end
 
 function onExit() 
   if vim.this_session then 
-    vim.cmd("mks! " .. vim.this_session)
+    vim.cmd("mks! " .. vim.v.this_session)
     os.remove(default_location)
   else
     vim.cmd("mks! " .. default_location)
