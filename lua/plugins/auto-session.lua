@@ -5,8 +5,8 @@ return {
     ---@module "auto-session"
     ---@type AutoSession.Config
     opts = {
-        suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
+        suppressed_dirs = { "~/", "~/vimsessions", "~/Downloads", "/", ""},
         auto_restore_last_session = true,
-        root_dir = vim.fn.stdpath("data") .. "/sessions/"
+        root_dir = '~/vimsessions'
     }
 }
