@@ -8,12 +8,20 @@ return {
       "MunifTanjim/nui.nvim",
       "nvim-tree/nvim-web-devicons", -- optional, but recommended
     },
-    opt = {
-        close_if_last_window = true
+    opts = {
+        auto_clean_after_session_restore = true 
     },
     config = function()
-        vim.api.nvim_create_autocmd("VimLeavePre", {command = ":Neotree close",})
-        vim.api.nvim_create_autocmd("VimEnter", {command = "Neotree"})
+        vim.api.nvim_create_autocmd("VimLeavePre", {
+            callback = function() 
+                vim.schedule(function() vim.cmd(":Neotree close") end)
+            end
+        })
+        vim.api.nvim_create_autocmd("VimEnter", {
+            callback = function() 
+                vim.schedule(function() vim.cmd("Neotree focus") end)
+            end
+        })
     end,
   }
 }
