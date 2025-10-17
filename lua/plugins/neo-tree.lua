@@ -11,6 +11,8 @@ return {
     opts = {
         auto_clean_after_session_restore = true,
         close_if_last_window = true,
+        open_files_using_relative_paths = false,
+        use_libuv_file_watcher = false,
         window = {
             mappings = {
                 ["P"] = {

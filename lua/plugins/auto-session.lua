@@ -10,6 +10,7 @@ return {
         root_dir = '~/vimsessions',
         close_filetypes_on_save = { "checkhealth", "neo-tree" },
         auto_delete_empty_sessions = false,
+        legacy_cmds = false,
         cwd_change_handling = false
     }
 }
