@@ -2,7 +2,7 @@ local target_langs = {
   c = {"clangd"},
   cpp = {"clangd"}, 
   diff = {},
-  lua = {},
+  lua = {"lua_ls"},
   luadoc = {},
   markdown = {},
   markdown_inline = {},
@@ -10,21 +10,26 @@ local target_langs = {
   regex = {},
   vim = {},
   vimdoc = {},
-  java = {"java-language-server"}, --,"java-test","java-debug-adapter"},
-  rust = {"rust-analyzer"}
+  java = {"jdtls"}, --,"java-test","java-debug-adapter"},
+  rust = {"rust_analyzer"}
 }
 
 local i = 1
-local j = 1
 local parserlist = {}
-local lsplist = {}
+local lspset = {}
 for k, v in pairs(target_langs) do
   parserlist[i] = k
   i = i+1
   for _, dep in ipairs(v) do
-    lsplist[j] = dep
-    j = j+1
+    lspset[dep] = true
   end
+end
+
+local j = 1
+local lsplist = {}
+for k, v in pairs(lspset) do
+    lsplist[j] = k
+    j = j+1
 end
 
 return {

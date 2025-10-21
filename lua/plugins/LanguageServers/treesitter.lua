@@ -7,6 +7,7 @@ return {
 
   opts = {
     -- LazyVim config for treesitter
+    ensure_installed = {}, -- filled in by language-servers.lua
     indent = { enable = true }, ---@type lazyvim.TSFeat
     highlight = { enable = true }, ---@type lazyvim.TSFeat
     folds = { enable = true }, ---@type lazyvim.TSFeat

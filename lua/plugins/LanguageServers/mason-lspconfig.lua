@@ -4,7 +4,7 @@ return {
         ensure_installed = {} -- filled in by language-servers.lua
     },
     dependencies = {
-        { "mason-org/mason.nvim", opts = {} },
+        "mason-org/mason.nvim",
         "neovim/nvim-lspconfig",
     },
 }
