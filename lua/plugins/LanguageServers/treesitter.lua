@@ -1,4 +1,4 @@
-return {{
+return {
   "nvim-treesitter/nvim-treesitter",
   
   event = { "BufReadPost", "BufWritePost", "BufNewFile", "VeryLazy" },
@@ -11,4 +11,4 @@ return {{
     highlight = { enable = true }, ---@type lazyvim.TSFeat
     folds = { enable = true }, ---@type lazyvim.TSFeat
   }
-}}
+}
