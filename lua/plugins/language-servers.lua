@@ -1,6 +1,6 @@
 local cmp = require('plugins.LanguageServers.nvim-cmp')
-local cmp_lsp = require('plugins.LanguageServers.cmp-nvim-lsp')
 local mason = require('plugins.LanguageServers.mason')
+local snip = require('plugins.LanguageServers.luasnip')
 
 local targets = require('plugins.LanguageServers.to-install')
 
@@ -12,8 +12,8 @@ mason_lsp["opts"]["ensure_installed"] = targets["lsplist"]
 
 return {
     cmp,
+    snip,
     mason,
-    cmp_lsp,
     mason_lsp,
     treesitter,
 }
