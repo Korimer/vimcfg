@@ -19,16 +19,4 @@ return {
       { name = "luasnip" },
     })
   } end,
-  
-  init = function()
-    local cmp = require 'cmp'
-    local luasnip = require 'luasnip'
-    local capabilities = require('cmp_nvim_lsp').default_capabilities()
-    for _, v in ipairs(require('plugins.completion.to-install')['lsplist']) do
-      vim.lsp.enable(v)
-      require('config.lsp.global')
-      vim.print(vim.lsp.config[v])--[capabilities] = capabilities
-      vim.print(vim.lsp.config[v])
-    end
-  end
 }
