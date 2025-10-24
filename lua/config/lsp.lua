@@ -32,14 +32,17 @@ for k, v in pairs(lspset) do
     j = j+1
 end
 
-local lsppath = vim.fn.stdpath("config") .. "/lua/config/lsp"
+local lsppath = vim.fn.stdpath("config") .. "/lua/config/lsp/configurations"
 
-for _, file in ipairs(lspset) do
-  local lsp_setup = require('config.lsp.' .. file:gsub("%.lua$",""))
-  local lsp_name = lsp_setup[1]
-  local lsp_cfg = lsp_setup[2]
-  vim.lsp.config[lsp_name] = lsp_cfg
-  vim.lsp.enable(lsp_name)
+for _, lsp in ipairs(lsplist) do
+  local f = io.open(lsppath .. '/' .. lsp .. '.lua')
+  if (f ~= nil) then
+    io.close(f)
+    local lsp_setup = require('config.lsp.configurations.' .. lsp)
+    local lsp_cfg = lsp_setup
+    vim.lsp.config[lsp] = lsp_cfg
+  end
+  vim.lsp.enable(lsp)
 end
 
 return {

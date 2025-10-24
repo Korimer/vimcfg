@@ -1,4 +1,3 @@
 return {
-  "lua_ls",
-  {}
+
 }
