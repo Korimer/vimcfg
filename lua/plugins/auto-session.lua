@@ -8,7 +8,7 @@ return {
         suppressed_dirs = { "~/", "~/vimsessions", "~/Downloads", "/", ""},
         auto_restore_last_session = true,
         root_dir = '~/vimsessions',
-        close_filetypes_on_save = { "checkhealth", "neo-tree" },
+        close_filetypes_on_save = { "checkhealth"},
         auto_delete_empty_sessions = false,
         legacy_cmds = false,
         cwd_change_handling = false
