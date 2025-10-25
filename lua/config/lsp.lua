@@ -10,7 +10,7 @@ local target_langs = {
   regex = {},
   vim = {},
   vimdoc = {},
-  java = {"jdtls"}, --,"java-test","java-debug-adapter"},
+  java = {"_java"}, --,"java-test","java-debug-adapter"}, -- Actually using nvim-java for this!
   rust = {"rust_analyzer"}
 }
 
