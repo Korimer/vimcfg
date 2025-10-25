@@ -10,7 +10,7 @@ local target_langs = {
   regex = {},
   vim = {},
   vimdoc = {},
-  java = {"_java"}, --,"java-test","java-debug-adapter"}, -- Actually using nvim-java for this!
+  java = {}, --,"java-test","java-debug-adapter"}, -- Actually using nvim-java for this!
   rust = {"rust_analyzer"}
 }
 
@@ -30,19 +30,6 @@ local lsplist = {}
 for k, v in pairs(lspset) do
     lsplist[j] = k
     j = j+1
-end
-
-local lsppath = vim.fn.stdpath("config") .. "/lua/config/lsp/configurations"
-
-for _, lsp in ipairs(lsplist) do
-  local f = io.open(lsppath .. '/' .. lsp .. '.lua')
-  if (f ~= nil) then
-    io.close(f)
-    local lsp_setup = require('config.lsp.configurations.' .. lsp)
-    local lsp_cfg = lsp_setup
-    vim.lsp.config[lsp] = lsp_cfg
-  end
-  vim.lsp.enable(lsp)
 end
 
 return {
