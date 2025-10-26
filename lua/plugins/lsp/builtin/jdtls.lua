@@ -9,16 +9,8 @@ return {
         runtimes = {
           {
             name = "JavaSE-17",
-            path = "/usr/lib/jvm/java-17-openjdk-amd64/" -- < path to Java 17 on Ubuntu
+            path = 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath_target_712252484' --vim.fn.stdpath('data') .. '\\mason'
           },
-          {
-            name = "JavaSE-11",
-            path = "/usr/lib/jvm/java-11-openjdk-amd64/" -- < path to Java 11 on Ubuntu
-          },
-          {
-            name = "JavaSE-1.8",
-            path = "/usr/lib/jvm/java-8-openjdk-amd64/jre"  -- < path to Java 8 on Ubuntu
-          }
         }
       }
     }
