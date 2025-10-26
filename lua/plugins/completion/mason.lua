@@ -10,7 +10,7 @@ return {
         },
         registries = {
           'github:mason-org/mason-registry',
-          'file:' .. vim.fn.stdpath('config') .. '\\config\\Mason-Custom'
+          'file:' .. vim.fn.stdpath('config') .. '\\lua\\config\\Mason-Custom'
         }
     }
 }

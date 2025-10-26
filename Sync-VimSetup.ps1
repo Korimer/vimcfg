@@ -1,4 +1,5 @@
 winget install Neovim.Neovim
+winget install --id MikeFarah.yq
 
 $nvide = 'neovide.exe'
 $nvimbin = 'C:\Program Files\Neovim\bin'
