@@ -1,7 +1,7 @@
 return {
     "mason-org/mason-lspconfig.nvim",
     opts = {
-        ensure_installed = {} -- filled in by language-servers.lua
+        ensure_installed = require('config.lang')['lsplist']
     },
     dependencies = {
         "mason-org/mason.nvim",

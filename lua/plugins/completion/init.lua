@@ -9,7 +9,6 @@ local lsps = targets["lsplist"]
 local treesitter = require('plugins.completion.treesitter')
 treesitter["opts"]["ensure_installed"] = parsers 
 local mason_lsp = require('plugins.completion.mason-lspconfig')
-mason_lsp["opts"]["ensure_installed"] = lsps
 
 return({
     cmp,
