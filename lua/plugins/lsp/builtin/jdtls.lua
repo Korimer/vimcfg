@@ -1,4 +1,5 @@
 return {
+  root_markers = {{'build.gradle'},'.git'},
   settings = {
     java = {
       eclipse = {
@@ -9,7 +10,7 @@ return {
         runtimes = {
           {
             name = "JavaSE-17",
-            path = 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath_target_712252484' --vim.fn.stdpath('data') .. '\\mason'
+            path = 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath' --vim.fn.stdpath('data') .. '\\mason'
           },
         }
       }
