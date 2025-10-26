@@ -10,7 +10,7 @@ return {
         runtimes = {
           {
             name = "JavaSE-17",
-            path = 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath' --vim.fn.stdpath('data') .. '\\mason'
+            path = 'C:\\Users\\K\\AppData\\Local\\nvim-data\\mason\\packages\\openjdk-17\\jdk-17.0.2' --vim.fn.stdpath('data') .. '\\mason'
           },
         }
       }
