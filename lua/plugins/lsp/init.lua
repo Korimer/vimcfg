@@ -2,10 +2,10 @@ local lsp_list = require('config.lang')["lsplist"]
 local lsp_path = vim.fn.stdpath('config') .. '\\lua\\plugins\\lsp'
 
 for _, lsp in ipairs(lsp_list) do
-  local f = io.open(lsp_path .. '\\builtin' .. lsp .. '.lua')
+  local f = io.open(lsp_path .. '\\builtin\\' .. lsp .. '.lua')
   if (f ~= nil) then
     io.close(f)
-    vim.lsp.config[lsp] = require('config.lsp.builtin.' .. lsp)
+    vim.lsp.config(lsp, require('plugins.lsp.builtin.' .. lsp))
   end
   vim.lsp.enable(lsp)
 end
