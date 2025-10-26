@@ -2,7 +2,7 @@ local target_langs = {
   c = {"clangd"},
   cpp = {"clangd"}, 
   diff = {},
-  lua = {"lua_ls"},
+  lua = {"lua-language-server"},
   luadoc = {},
   markdown = {},
   markdown_inline = {},
@@ -11,7 +11,7 @@ local target_langs = {
   vim = {},
   vimdoc = {},
   java = {'jdtls','openjdk-17'}, --,"java-test","java-debug-adapter"} 
-  rust = {"rust_analyzer"}
+  rust = {"rust-analyzer"}
 }
 
 local i = 1

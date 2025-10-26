@@ -14,6 +14,17 @@ return {
         }
     },
     init = function()
-      require('mason-registry').refresh()
+      local mreg = require('mason-registry') -- do NOT typo a 'p' here
+      mreg.refresh(function() 
+        for _, lsp in ipairs(require('config.lang')['lsplist']) do
+          if mreg.has_package(lsp) then
+            if not mreg.is_installed(lsp) then
+              vim.cmd('MasonInstall ' .. lsp)
+            end
+          else
+            vim.notify('ERROR in mason init: lsp \'' ..lsp .. '\' is not available in any registry.')
+          end
+        end
+      end)
     end
 }
