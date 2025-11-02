@@ -5,9 +5,15 @@ for _, lsp in ipairs(lsp_list) do
   local f = io.open(lsp_path .. '\\builtin\\' .. lsp .. '.lua')
   if (f ~= nil) then
     io.close(f)
-    vim.lsp.config(lsp, require('plugins.lsp.builtin.' .. lsp))
+    local pre_config = require('plugins.lsp.builtin.' .. lsp)
+    if next(pre_config) ~= nil then
+      vim.lsp.config(lsp,pre_config)
+      vim.lsp.enable(lsp)
+    end
+  else
+    vim.print('enabling ' .. lsp)
+    vim.lsp.enable(lsp)
   end
-  vim.lsp.enable(lsp)
 end
 
 local full_spec = {}
