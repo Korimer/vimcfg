@@ -1,38 +1,77 @@
+-- Editable spec. what langs do I want?
 local target_langs = {
-  c = {"clangd"},
-  cpp = {"clangd"}, 
+  vim = {},
   diff = {},
-  lua = {"lua-language-server"},
+  regex = {},
   luadoc = {},
+  printf = {},
+  vimdoc = {},
   markdown = {},
   markdown_inline = {},
-  printf = {},
-  regex = {},
-  vim = {},
-  vimdoc = {},
-  java = {'jdtls','openjdk-25','openjdk-17'}, --,"java-test","java-debug-adapter"} 
-  rust = {"rust-analyzer"}
+
+  c = {"clangd"},
+  cpp = {"clangd"},
+
+  lua = {
+    {
+      name = "lua-language-server",
+      alias = "lua_ls",
+    }
+  },
+  java = {
+    {
+      name = 'jdtls',
+      enable = false,
+    },
+    'openjdk-25','openjdk-17'
+  }, --,"java-test","java-debug-adapter"} 
+  rust = {
+    {
+      name = "rust-analyzer",
+      alias = "rust_analyzer",
+    }
+  }
 }
 
+-- Generate the list of treesitter parsers and their respective lsps
 local i = 1
 local parserlist = {}
-local lspset = {}
+
+local simple_cnt = 1
+local spec_cnt = 1
+local overlap = {}
+
+local lsp_simple = {}
+local lsp_spec = {}
+local lsp_all = {}
 for k, v in pairs(target_langs) do
   parserlist[i] = k
   i = i+1
   for _, dep in ipairs(v) do
-    lspset[dep] = true
+    if type(dep) == "string" then
+      if not overlap[dep] then
+        overlap[dep] = simple_cnt
+        lsp_simple[simple_cnt] = dep
+        lsp_all[simple_cnt+spec_cnt-1] = dep
+        simple_cnt = simple_cnt + 1
+      end
+    else
+      if not overlap[dep.name] then
+        overlap[dep.name] = spec_cnt
+        lsp_spec[spec_cnt] = {}
+        lsp_all[simple_cnt+spec_cnt-1] = dep.name
+        spec_cnt = spec_cnt + 1
+      end
+      lsp_spec[overlap[dep.name]] =
+          vim.tbl_extend("force",lsp_spec[overlap[dep.name]],dep)
+    end
   end
 end
 
-local j = 1
-local lsplist = {}
-for k, v in pairs(lspset) do
-    lsplist[j] = k
-    j = j+1
-end
-
+-- return convenient references for everything
 return {
-  ["parserlist"] = parserlist,
-  ["lsplist"] = lsplist
+  ts_parsers = parserlist,
+  lsp_simple = lsp_simple,
+  lsp_spec = lsp_spec,
+  lsp_all = lsp_all
 }

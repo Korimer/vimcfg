@@ -1,21 +1,36 @@
 #---
-#name: gcc
+#name: clang-llvm
 #description: |
-#  A custom GCC package made by yours truly
-#homepage: https://github.com/niXman/mingw-builds-binaries/
+#  The LLVM Project is a collection of modular and reusable compiler and toolchain technologies.
+#  This package provides the Clang compiler and LLVM tools prebuilt for Windows (MSVC ABI).
+#homepage: https://github.com/llvm/llvm-project
 #licenses:
-#  - GPL-2.0
+#  - Apache-2.0
 #languages:
 #  - C
+#  - C++
 #categories:
-#  - Runtime
+#  - Compiler
 #
 #source:
-#  id: pkg:generic/C/gcc@15.2.0
-#  download:
-#    - target: win
-#      files:
-#        gcc-15.2.0.7z: https://github.com/niXman/mingw-builds-binaries/releases/download/15.2.0-rt_v13-rev0/x86_64-15.2.0-release-win32-seh-ucrt-rt_v13-rev0.7z
-#      bin: mingw64/bin/gcc.exe
-# bin:
-#  gcc: "{{source.download.bin}}"
+#  id: pkg:github/llvm/llvm-project@llvmorg-18.1.8
+#  asset:
+#    - target: win_x64
+#      file: clang+llvm-{{ version | strip_prefix "llvmorg-" }}-x86_64-pc-windows-msvc.tar.xz
+#      directory: clang+llvm-{{ version | strip_prefix "llvmorg-" }}-x86_64-pc-windows-msvc
+#      bin:
+#        clang: bin/clang.exe
+#        clang-cl: bin/clang-cl.exe
+#        clangd: bin/clangd.exe
+#        llc: bin/llc.exe
+#        opt: bin/opt.exe
+#
+#bin:
+#  clang: "{{source.asset.bin.clang}}"
+#  clang-cl: "{{source.asset.bin.clang-cl}}"
+#  clangd: "{{source.asset.bin.clangd}}"
+#  llc: "{{source.asset.bin.llc}}"
+#  opt: "{{source.asset.bin.opt}}"
+#
+#neovim:
+#  lspconfig: clangd
