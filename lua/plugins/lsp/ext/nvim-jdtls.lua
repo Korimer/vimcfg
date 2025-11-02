@@ -1,7 +1,9 @@
 local mason_path = vim.fn.stdpath('data') .. "\\mason\\packages"
 
 local jdk_most_recent = mason_path .. "\\openjdk-25\\jdk-25.0.1"
-local jdtls_most_recent = mason_path .. "\\jdtls\\plugins\\org.eclipse.equinox.launcher_1.7.0.v20250519-0528.jar"
+local jdtls_most_recent = mason_path .. "\\jdtls\\plugins\\org.eclipse.equinox.launcher_1.7.100.v20251014-1222.jar"
+
+local config_directory = mason_path .. "\\jdtls\\config_win"
 
 local dynamic_command = function(project_name)
   return {
@@ -18,22 +20,32 @@ local dynamic_command = function(project_name)
       "java.base/java.lang=ALL-UNNAMED",
     "-jar", 
       jdtls_most_recent,
-    "-data",
-      vim.fn.stdpath("cache") .. "/jdtls/" .. project_name .. "/workspace",
     "-configuration",
-      vim.fn.stdpath("cache") .. "/jdtls/" .. project_name .. "/config"
+      config_directory,
+    "-data",
+      vim.fn.stdpath("cache") .. "\\jdtls\\" .. project_name .. "\\workspace",
   }
 end
 
-local getdir = function()
-  local fname = vim.api.nvim_buf_get_name(0)
-  local rdir = vim.fs.root(fname, vim.lsp.config.jdtls.root_markers)
-  if rdir == nil then return nil else return vim.fs.basename(rdir) end
+local get_cur_dir = function() 
+  return vim.api.nvim_buf_get_name(0)
+end
+
+local get_root_dir = function(fname)
+  return vim.fs.root(fname, vim.lsp.config.jdtls.root_markers)
+end
+
+local get_workspace_dir = function(rdir)
+  if rdir == nil then
+    return vim.fn.stdir('cache') .. "\\jdtls\\_unnamed_project\\workspace"
+  else
+    return vim.fs.basename(rdir) 
+  end
 end
 
 local jdtl_config = function()
-  local root_directory = getdir()
-  local cmd = dynamic_command(root_directory)
+  local root_directory = get_root_dir(get_cur_dir())
+  local cmd = dynamic_command(get_workspace_dir(root_directory))
   return {
     cmd = cmd,
     name = "jdtls",
@@ -58,10 +70,10 @@ local jdtl_config = function()
         },
       }
     },
+    -- for use with other extensions
     on_attach = {},
   }
 end
-  -- for use with other extensions
   -- Unsure if i should be modifying these
 --  init_options = {
 --    -- https://github.com/eclipse-jdtls/eclipse.jdt.ls/wiki/Language-Server-Settings-&-Capabilities#extended-client-capabilities
@@ -86,8 +98,8 @@ return {
     vim.api.nvim_create_autocmd("FileType", {
       pattern = "java",
       callback = function()
-        vim.print('calling startorattach with')
-        vim.print(jdtl_config())
+        --vim.print('calling startorattach with')
+        --vim.print(jdtl_config())
         require('jdtls').start_or_attach(jdtl_config())
       end
     })

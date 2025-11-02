@@ -11,7 +11,6 @@ for _, lsp in ipairs(lsp_list) do
       vim.lsp.enable(lsp)
     end
   else
-    vim.print('enabling ' .. lsp)
     vim.lsp.enable(lsp)
   end
 end

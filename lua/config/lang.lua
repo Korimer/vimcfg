@@ -10,7 +10,7 @@ local target_langs = {
   regex = {},
   vim = {},
   vimdoc = {},
-  java = {'jdtls','openjdk-17'}, --,"java-test","java-debug-adapter"} 
+  java = {'jdtls','openjdk-25','openjdk-17'}, --,"java-test","java-debug-adapter"} 
   rust = {"rust-analyzer"}
 }
 
