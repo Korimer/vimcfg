@@ -22,8 +22,13 @@ local target_langs = {
     {
       name = 'jdtls',
       enable = false,
-    },
-    'openjdk-25','openjdk-17'
+    }, {
+      name = 'openjdk-25',
+      enable = false,
+    }, {
+      name = 'openjdk-17',
+      enable = false
+    }
   }, --,"java-test","java-debug-adapter"} 
   rust = {
     {
