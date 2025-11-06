@@ -52,7 +52,7 @@ local jdtl_config = function()
   return {
     cmd = cmd,
     name = "jdtls",
-    on_attach = function () vim.notify("attached!!!!!!") end,
+    on_attach = function () end, -- for later use...
     filetypes = { "java" },
     root_dir = root_directory,
     -- see https://github.com/eclipse-jdtls/eclipse.jdt.ls/wiki/Running-the-JAVA-LS-server-from-the-command-line#initialize-request
