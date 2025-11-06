@@ -35,8 +35,6 @@ local get_cur_dir = function()
 end
 
 local get_root_dir = function(fname)
-  vim.print("as of the workspace call, root markers are...")
-  vim.print(vim.lsp.config.jdtls.root_markers)
   return vim.fs.root(fname, vim.lsp.config.jdtls.root_markers)
 end
 
@@ -89,8 +87,6 @@ return {
       pattern = "java",
       callback = function()
         require('jdtls').start_or_attach(jdtl_config())
-        vim.print("as of the attachment, root markers are...")
-        vim.print(vim.lsp.config.jdtls.root_markers)
 
       end
     })
@@ -98,7 +94,6 @@ return {
       callback = function()
         if client == nil then return nil end
         if client.name ~= 'jdtls' then return nil end
-        vim.print("just attached jdtls!~~")
       end
     })
   end
