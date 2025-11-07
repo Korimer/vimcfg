@@ -16,6 +16,7 @@ if vim.g.env == "WINDOWS" then
       local tmp_locale = vim.fn.stdpath('data') .. "/SudoWriteTmp"
       local f = io.open(tmp_locale,"w+")
 
+      -- Save the contents of the file to a temporary location
       if f == nil then
         vim.notify("Error: cannot open tmp locale " .. tmp_locale)
         return
@@ -25,10 +26,11 @@ if vim.g.env == "WINDOWS" then
         f:close()
       end
 
+      -- With admin perms, replace the currently opened file with the temp one's contents
       vim.cmd(
         "!powershell "              ..
         "start-process powershell " ..
-        "-Verb runas "              ..
+        "-Verb runas "              .. -- privilege escalation beloved
         "-ArgumentList @("          ..
           "'-c',"                   ..
           "'Get-Content',"          ..
@@ -44,7 +46,16 @@ if vim.g.env == "WINDOWS" then
   )
 end
 
-return {
-  "https://github.com/lambdalisue/vim-suda",
-  cond = vim.g.env == "LINUX",
-}
+if vim.g.env == "LINUX" then
+
+  vim.api.nvim_create_user_command("SW", function()
+    vim.cmd("SudaWrite")
+  end, {})
+
+  return {
+    "https://github.com/lambdalisue/vim-suda",
+    lazy = true,
+    cmd = { "SudaWrite", "SudaRead", "SW" },
+  }
+
+else return {} end
