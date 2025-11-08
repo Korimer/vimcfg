@@ -4,7 +4,7 @@ return {
   init = function()
     local lspconf_path = require("lazy.core.config").options.root .. "/nvim-lspconfig"
     vim.opt.runtimepath:prepend(lspconf_path)
-
+    
     local lsp_sets = require('config.lang')
     local lsp_simple = lsp_sets.lsp_simple
     local lsp_spec = lsp_sets.lsp_spec

@@ -1,6 +1,3 @@
--- because nvim-jdtls places its own jdtls.lua that otherwise overrides mine
-vim.lsp.config('jdtls',require('lsp.jdtls'))
-
 local mason_path = vim.fn.stdpath('data') .. "/mason/packages"
 
 local jdk_most_recent = mason_path .. "/openjdk-25/jdk-25.0.1"

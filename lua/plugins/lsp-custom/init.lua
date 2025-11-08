@@ -1,5 +1,3 @@
-local lsp_list = require('config.lang')
-
 local full_spec = {}
 local external_lsp_repos = vim.api.nvim_get_runtime_file("lua/plugins/lsp-custom/ext/*.lua",true)
 for i=1, #external_lsp_repos do
