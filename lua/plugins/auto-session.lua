@@ -13,6 +13,6 @@ return {
     legacy_cmds = false,
     cwd_change_handling = false,
     pre_save_cmds = { 'Neotree close' },
-    post_restore_cmds = { 'Neotree focus' },
+    post_restore_cmds = { 'Neotree filesystem show' },
   },
 }
