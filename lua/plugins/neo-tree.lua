@@ -28,11 +28,11 @@ return {
         }
     },
     init = function()
-        vim.api.nvim_create_autocmd("VimLeavePre", {
-            callback = function() 
-                vim.schedule(function() vim.cmd(":Neotree close") end)
-            end
-        })
+--        vim.api.nvim_create_autocmd("VimLeavePre", {
+--            callback = function() 
+--                vim.schedule(function() vim.cmd(":Neotree close") end)
+--            end
+--        })
         vim.api.nvim_create_autocmd("VimEnter", {
             callback = function() 
                 vim.schedule(function() vim.cmd("Neotree focus") end)
