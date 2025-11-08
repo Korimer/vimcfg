@@ -1,16 +1,16 @@
 -- because nvim-jdtls places its own jdtls.lua that otherwise overrides mine
 vim.lsp.config('jdtls',require('lsp.jdtls'))
 
-local mason_path = vim.fn.stdpath('data') .. "\\mason\\packages"
+local mason_path = vim.fn.stdpath('data') .. "/mason/packages"
 
-local jdk_most_recent = mason_path .. "\\openjdk-25\\jdk-25.0.1"
-local jdtls_most_recent = mason_path .. "\\jdtls\\plugins\\org.eclipse.equinox.launcher_1.7.100.v20251014-1222.jar"
+local jdk_most_recent = mason_path .. "/openjdk-25/jdk-25.0.1"
+local jdtls_most_recent = vim.split(vim.fn.glob(mason_path .. "/jdtls/plugins/org.eclipse.equinox.launcher_*.jar"),'\n')[1]
 
-local config_directory = mason_path .. "\\jdtls\\config_win"
+local config_directory = mason_path .. "/jdtls/config_win"
 
 local dynamic_command = function(project_name)
   return {
-    jdk_most_recent .. "\\bin\\java.exe", -- jdtls = python wrapper for "convenience", java = the actual setup
+    jdk_most_recent .. "/bin/java.exe", -- jdtls = python wrapper for "convenience", java = the actual setup
     "-Declipse.application=org.eclipse.jdt.ls.core.id1",
     "-Dosgi.bundles.defaultStartLevel=4",
     "-Declipse.product=org.eclipse.jdt.ls.core.product",
@@ -26,7 +26,7 @@ local dynamic_command = function(project_name)
     "-configuration",
       config_directory,
     "-data",
-      vim.fn.stdpath("cache") .. "\\jdtls\\" .. project_name .. "\\workspace",
+      vim.fn.stdpath("cache") .. "/jdtls/" .. project_name .. "/workspace",
   }
 end
 
@@ -40,7 +40,7 @@ end
 
 local get_workspace_dir = function(rdir)
   if rdir == nil then
-    return vim.fn.stdir('cache') .. "\\jdtls\\_unnamed_project\\workspace"
+    return vim.fn.stdir('cache') .. "/jdtls/_unnamed_project/workspace"
   else
     return vim.fs.basename(rdir)
   end
@@ -65,11 +65,11 @@ local jdtl_config = function()
           runtimes = {
             {
               name = "JavaSE-17",
-              path = mason_path .. "\\openjdk-17\\jdk-17.0.2"
+              path = mason_path .. "/openjdk-17/jdk-17.0.2"
             },
             {
               name = "JavaSE-25",
-              path = mason_path .. "\\openjdk-25\\jdk-25.0.1"
+              path = mason_path .. "/openjdk-25/jdk-25.0.1"
             }
           },
         },
