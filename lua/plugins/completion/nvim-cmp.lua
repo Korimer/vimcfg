@@ -10,12 +10,11 @@ return {
     -- "ray-x/cmp-treesitter", -- uncomment if using treesitter completion
   },
 
-  opts = function() 
+  opts = function()
     local cmp = require('cmp')
     return {
       experimental = { ghost_text = true },
       snippet = { expand = function(args) require('luasnip').lsp_expand(args.body) end },
-      mapping = {},
       sources = cmp.config.sources({
         { name = "nvim_lsp" },
         { name = "luasnip" },
@@ -29,5 +28,10 @@ return {
         ['<Tab>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
       }),
     }
-  end
+  end,
+
+  init = function()
+    local capabilities = require('cmp_nvim_lsp').default_capabilities()
+    vim.lsp.config('*',{capabilities = capabilities})
+  end,
 }
