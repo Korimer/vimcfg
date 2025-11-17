@@ -1,5 +1,6 @@
 return {
   "mason-org/mason.nvim",
+  enabled = vim.g.distro_name ~= "NixOS",
   opts = {
     ui = {
       icons = {
