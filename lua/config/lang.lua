@@ -12,6 +12,8 @@ local target_langs = {
   c = {"clangd"},
   cpp = {"clangd"},
 
+  python = {"basedpyright"},
+
   lua = {
     {
       name = "lua-language-server",

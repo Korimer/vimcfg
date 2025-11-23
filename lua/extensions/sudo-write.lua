@@ -7,7 +7,7 @@ if vim.g.env == "WINDOWS" then
   vim.api.nvim_create_user_command("SW", function()
       local cur_file = vim.fn.expand('%')
 
-      if vim.fn.file_readable(cur_file) == 0 then
+      if vim.fn.filereadable(cur_file) == 0 then
         vim.notify("Error: File " .. cur_file .. " is not readable.")
         return
       end
