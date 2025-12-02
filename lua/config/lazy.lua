@@ -21,18 +21,20 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+local imports = {}
+local extensionset = vim.fn.readdir(vim.fn.stdpath("config") .. "/lua/extensions/unstructured")
+for i=1, #extensionset do imports[i] = { import = "extensions/unstructured/" .. extensionset[i] } end
+imports[#extensionset] = { import = "extensions/structured/" }
+
 -- Setup lazy.nvim
 require("lazy").setup({
-  spec = {
-    -- import your plugins
-    { import = "extensions" },
+  spec = imports,
+  rocks = {
+    enabled = false,
   },
---  rocks = {
---    enabled = false,
---  },
 --  -- Configure any other settings here. See the documentation for more details.
 --  -- colorscheme that will be used when installing plugins.
---  install = { colorscheme = { "habamax" } },
+  install = { colorscheme = { "habamax" } },
 --  -- automatically check for plugin updates
 --  checker = { enabled = true },
 })
