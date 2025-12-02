@@ -5,3 +5,6 @@ vim.api.nvim_create_user_command("KillShada",function ()
     os.remove(shada_root .. '/' .. shadafiles[i] )
   end
 end, {})
+
+vim.keymap.set('n','<F3>',':nohlsearch<CR>',{noremap=true; silent=true})
+vim.keymap.set('n','gd',vim.lsp.buf.definition,{noremap=true; silent=true})
