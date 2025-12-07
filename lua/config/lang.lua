@@ -1,6 +1,7 @@
 -- Editable spec. what langs do I want?
 local target_langs = {
   vim = {},
+  nix = {},
   diff = {},
   regex = {},
   luadoc = {},
@@ -11,7 +12,7 @@ local target_langs = {
 
   c = {"clangd"},
   cpp = {"clangd"},
-
+  html = {"html-lsp"},
   python = {"basedpyright"},
 
   lua = {
@@ -20,6 +21,7 @@ local target_langs = {
       alias = "lua_ls",
     }
   },
+
   java = {
     {
       name = 'jdtls',
@@ -32,6 +34,7 @@ local target_langs = {
       enable = false
     }
   }, --,"java-test","java-debug-adapter"} 
+
   rust = {
     {
       name = "rust-analyzer",
