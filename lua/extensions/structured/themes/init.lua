@@ -1,13 +1,15 @@
-vim.g.boot_colorscheme = "unokai"
+vim.g.boot_colorscheme = "hubbamax"
 
 local extensions = {
+  require('extensions.structured.themes.feline'),
   { "catppuccin/nvim", name = "catppuccin" },
-  { "folke/tokyonight.nvim", opts = {} },
-  { "EdenEast/nightfox.nvim", opts = {} },
-  { "AlexvZyl/nordic.nvim", opts = {} },
-  { "bluz71/vim-moonfly-colors", opts = {} },
-  { "Mofiqul/vscode.nvim", opts = {} },
-  { "craftzdog/solarized-osaka.nvim", opts = {} },
+  { "alexpasmantier/hubbamax.nvim" },
+  { "folke/tokyonight.nvim" },
+  { "EdenEast/nightfox.nvim" },
+  { "AlexvZyl/nordic.nvim" },
+  { "bluz71/vim-moonfly-colors" },
+  { "Mofiqul/vscode.nvim" },
+  { "craftzdog/solarized-osaka.nvim" },
 }
 
 vim.keymap.set("n","<A-=>", function()
@@ -26,7 +28,6 @@ vim.keymap.set("n","<A-->", function()
     vim.cmd("colorscheme " .. vim.g.all_colorschemes[vim.g.colorscheme_selected])
   end
 )
-
 
 vim.api.nvim_create_autocmd("User", {
   pattern="LazyDone",
