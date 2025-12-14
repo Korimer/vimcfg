@@ -23,5 +23,13 @@ return {
       open_paren = "shiftwidth() * 2",
       searchpair_timeout = 150
     }
-  end
+  end,
+
+  build = function()
+    pcall(require('nvim-treesitter.install').update({ with_sync = true }))
+  end,
+
+  dependencies = {
+    'nvim-treesitter/nvim-treesitter-textobjects',
+  },
 }
