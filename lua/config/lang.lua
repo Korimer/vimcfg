@@ -12,7 +12,7 @@ local target_langs = {
 
   c = {"clangd"},
   cpp = {"clangd"},
-  html = {"html-lsp"},
+  html = {"superhtml"}, -- html-lsp from vscode is probably more standard but who cares
   javascript = {"vtsls"},
   typescript = {"vtsls"},
   python = {"basedpyright"},
