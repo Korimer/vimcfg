@@ -13,6 +13,8 @@ local target_langs = {
   c = {"clangd"},
   cpp = {"clangd"},
   html = {"html-lsp"},
+  javascript = {"vtsls"},
+  typescript = {"vtsls"},
   python = {"basedpyright"},
 
   lua = {

@@ -8,10 +8,10 @@ end, {})
 
 vim.keymap.set('n','<F3>',':nohlsearch<CR>',{noremap=true; silent=true})
 vim.keymap.set('n','gd',vim.lsp.buf.definition,{noremap=true; silent=true})
-vim.keymap.set('i',"<CR>",
-  function()
-    vim.notify("hi")
-    return "<CR><C-o>O"
-  end
-  ,{noremap=true; silent=true, expr=true}
-)
+--vim.keymap.set('i',"<CR>",
+--  function()
+--    vim.notify("hi")
+--    return "<CR><C-o>O"
+--  end
+--  ,{noremap=true; silent=true, expr=true}
+--)
