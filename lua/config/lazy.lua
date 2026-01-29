@@ -29,6 +29,10 @@ imports[#extensionset + 1] = { import = "extensions/structured/" }
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = imports,
+  change_detection = {
+    enabled = true,
+    notify = false,
+  },
   rocks = {
     enabled = false,
   },

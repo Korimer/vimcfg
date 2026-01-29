@@ -77,6 +77,7 @@ local jdtl_config = function()
 end
 
 return {
+  enabled=false,
   'mfussenegger/nvim-jdtls',
   dependencies = { "neovim/nvim-lspconfig" },
   config = function()
