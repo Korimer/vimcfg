@@ -4,7 +4,7 @@ local target_langs = {
   "superhtml", -- html-lsp from vscode is probably more standard but who cares
   "vtsls",
   "basedpyright",
-  
+
   {
     name = "lua-language-server",
     alias = "lua_ls",
@@ -12,7 +12,7 @@ local target_langs = {
 
   {
     name = 'jdtls',
-    enable = false,
+    enable = true,
   }, {
     name = 'openjdk-25',
     enable = false,

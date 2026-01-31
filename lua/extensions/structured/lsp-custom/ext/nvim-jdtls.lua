@@ -76,23 +76,24 @@ local jdtl_config = function()
   }
 end
 
-return {
-  enabled=false,
-  'mfussenegger/nvim-jdtls',
-  dependencies = { "neovim/nvim-lspconfig" },
-  config = function()
-    vim.api.nvim_create_autocmd("FileType", {
-      pattern = "java",
-      callback = function()
-        require('jdtls').start_or_attach(jdtl_config())
-
-      end
-    })
-    vim.api.nvim_create_autocmd("LspAttach", {
-      callback = function()
-        if client == nil then return nil end
-        if client.name ~= 'jdtls' then return nil end
-      end
-    })
-  end
-}
+return {}
+--{
+--  enabled=false,
+--  'mfussenegger/nvim-jdtls',
+--  dependencies = { "neovim/nvim-lspconfig" },
+--  config = function()
+--    vim.api.nvim_create_autocmd("FileType", {
+--      pattern = "java",
+--      callback = function()
+--        require('jdtls').start_or_attach(jdtl_config())
+--
+--      end
+--    })
+--    vim.api.nvim_create_autocmd("LspAttach", {
+--      callback = function()
+--        if client == nil then return nil end
+--        if client.name ~= 'jdtls' then return nil end
+--      end
+--    })
+--  end
+--}
