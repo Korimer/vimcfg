@@ -1,3 +1,7 @@
+local tsparsers = {
+  "c", "cpp", "python", "lua", "rust", "java", "javascript", "ini", "html"
+}
+
 return {
   "nvim-treesitter/nvim-treesitter",
   version="*",
@@ -5,7 +9,8 @@ return {
   lazy = false,
 
   opts = {
-    install_dir = vim.fn.stdpath('data') .. '/treesitter'
+    install_dir = vim.fn.stdpath('data') .. '/treesitter',
+    prefer_git = true
   },
 
   config = function (_,opts)
@@ -15,7 +20,7 @@ return {
       incremental_selection = { enable = true },
       textobjects = { enable = true }
     })
-    require('nvim-treesitter.install').install(require('config.lang').ts_parsers)
+    require('nvim-treesitter.install').install(tsparsers)
   end
 
   --event = { "BufReadPost", "BufWritePost", "BufNewFile", "VeryLazy" },
