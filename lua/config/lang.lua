@@ -1,5 +1,6 @@
 -- Editable spec. what langs do I want?
 local target_langs = {
+
   "clangd",
   "superhtml", -- html-lsp from vscode is probably more standard but who cares
   "vtsls",
@@ -24,6 +25,11 @@ local target_langs = {
   {
     name = "rust-analyzer",
     alias = "rust_analyzer",
+  },
+
+  {
+    name = 'tree-sitter-cli',
+    enable = false
   }
 }
 
