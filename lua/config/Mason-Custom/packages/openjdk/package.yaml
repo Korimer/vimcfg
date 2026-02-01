@@ -51,7 +51,7 @@ categories:
   - Runtime
 
 source:
-  id: pkg:generic/java/openjdk@25.0.1
+  id: pkg:generic/java/openjdk@25.0.2
   download:
     - target: [darwin_x64, darwin_arm64]
       files:
@@ -61,16 +61,16 @@ source:
     - target: [linux_x64, linux_x86]
       files:
         openjdk-25.0.1.tar.gz: https://download.oracle.com/java/25/latest/jdk-25_linux-x64_bin.tar.gz
-      bin: jdk-25.0.1/bin/java
+      bin: jdk-25.0.2/bin/java
 
     - target: linux_arm64
       files:
         openjdk-25.0.1.tar.gz: https://download.oracle.com/java/25/latest/jdk-25_linux-aarch64_bin.tar.gz
-      bin: jdk-25.0.1/bin/java
+      bin: jdk-25.0.2/bin/java
 
     - target: win
       files:
         openjdk-25.0.1.zip: https://download.oracle.com/java/25/latest/jdk-25_windows-x64_bin.zip
-      bin: jdk-25.0.1/bin/java.exe
+      bin: jdk-25.0.2/bin/java.exe
 bin:
   java: "{{source.download.bin}}"

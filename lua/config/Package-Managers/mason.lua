@@ -22,7 +22,7 @@ return {
       for i=1, #all_installs do
         local lsp = all_installs[i]
         if mreg.has_package(lsp.name) then
-          if mreg.is_installed(lsp.name) then
+          if not mreg.is_installed(lsp.name) then
             mapi.MasonInstall({lsp.name})
           end
         else

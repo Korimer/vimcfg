@@ -19,6 +19,6 @@ return {
       incremental_selection = { enable = true },
       textobjects = { enable = true }
     })
-    require('nvim-treesitter.install').install(tsparsers)
+    require('nvim-treesitter').install(tsparsers, {max_jobs=1})
   end
 }
