@@ -21,11 +21,13 @@ return {
       local all_installs = require('config.lang')
       for i=1, #all_installs do
         local lsp = all_installs[i]
-        local cond =
-          mreg.has_package(lsp.name) 
-          and not mreg.is_installed(lsp.name)
-          and lsp.enable
-        if cond then mapi.MasonInstall({lsp.name}) end
+        if mreg.has_package(lsp.name) then
+          if mreg.is_installed(lsp.name) then
+            mapi.MasonInstall({lsp.name})
+          end
+        else
+          error("Error: Package " .. lsp.name .. " does not exist in the Mason registry!")
+        end
       end
     end)
   end

@@ -12,7 +12,10 @@ end
 
 if vim.g.env == "WINDOWS" then 
   vim.opt.runtimepath:prepend("C:/Program Files/Git/usr/bin;")
+  vim.g.path_sep = "\\"
   --vim.env.PATH = "C:/Program Files/Git/usr/bin;" .. vim.env.PATH
+else
+  vim.g.path_sep = "/"
 end
 
 local distro = nil
