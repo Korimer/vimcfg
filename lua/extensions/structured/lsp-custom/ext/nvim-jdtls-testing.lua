@@ -1,5 +1,5 @@
 local sep = vim.g.path_sep
-local mason_dir = vim.fn.stdpath('data') .. sep .. 'mason' 
+local mason_dir = vim.fn.stdpath('data') .. sep .. 'mason'
 local jdtls_dir = mason_dir .. sep .. 'packages'.. sep .. 'jdtls'
 
 local os_dir
@@ -47,8 +47,6 @@ end
 
 
 local function Get_command(dispatchers,config)
-  vim.print(dispatchers)
-  vim.print(config)
   local full_command_set = {
     {"java"},
     simple_single,
@@ -62,7 +60,6 @@ local function Get_command(dispatchers,config)
   for i=1, #full_command_set do
     vim.list_extend(full_command,full_command_set[i])
   end
-  vim.notify(vim.fn.join(full_command," "))
   return vim.lsp.rpc.start(
     full_command,
     dispatchers,
@@ -80,7 +77,23 @@ return {
   dependencies = { "neovim/nvim-lspconfig" },
   config = function ()
     vim.lsp.config("jdtls", {
-      cmd = Get_command
+      cmd = Get_command,
+      settings = {
+        java = {
+          configuration = {
+            runtimes = {
+              {
+                name = "JavaSE-17",
+                path = mason_dir..sep.."packages"..sep.."openjdk-17"..sep.."jdk-17.0.2"
+              },
+              {
+                name = "JavaSE-25",
+                path = mason_dir..sep.."packages"..sep.."openjdk-25"..sep.."jdk-25.0.2"
+              }
+            },
+          }
+        }
+      },
     })
   end
 }
