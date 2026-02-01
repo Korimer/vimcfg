@@ -28,7 +28,17 @@ local target_langs = {
   },
 
   {
-    name = 'tree-sitter-cli',
+    name = 'python-embed',
+    enable = false
+  },
+
+  {
+    -- For some reason, some extraction tools (or environments??)
+    -- will extract "tree-sitter-windows-x64.exe"
+    -- and some will extract "tree-sitter.exe"
+    name =
+      vim.g.env == 'LINUX' and 'tree-sitter-cli'
+      or vim.g.env == 'WINDOWS' and 'tree-sitter-cli-win-fix',
     enable = false
   }
 }
@@ -39,7 +49,7 @@ local complete = {}
 for i=1, #target_langs do
   local pre_lang = target_langs[i]
   local lang
-  if type(pre_lang) == "string" then 
+  if type(pre_lang) == "string" then
     lang = { name = pre_lang }
   else
     lang = pre_lang

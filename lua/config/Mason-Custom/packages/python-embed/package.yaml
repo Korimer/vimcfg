@@ -1,0 +1,22 @@
+---
+name: python-embed
+description: |
+  Python 3.14 embeddable distribution for Windows.
+  Minimal Python runtime intended for embedding and tooling.
+homepage: https://www.python.org
+licenses:
+  - PSF-2.0
+languages:
+  - Python
+categories:
+  - Runtime
+
+source:
+  id: pkg:generic/python/python-embed@3.14.2
+  download:
+    - target: win_x64
+      files:
+        python-3.14.2-embed-amd64.zip: https://www.python.org/ftp/python/3.14.2/python-3.14.2-embed-amd64.zip
+
+bin:
+  python: python.exe
