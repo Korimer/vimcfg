@@ -28,11 +28,6 @@ local target_langs = {
   },
 
   {
-    name = 'python-embed',
-    enable = false
-  },
-
-  {
     -- For some reason, some extraction tools (or environments??)
     -- will extract "tree-sitter-windows-x64.exe"
     -- and some will extract "tree-sitter.exe"
