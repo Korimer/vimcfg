@@ -25,6 +25,7 @@ return {
       pattern = "*",
       callback = function()
         if vim.treesitter.get_parser(0,nil,{error=false}) ~= nil then
+          vim.cmd.syntax("off")
           vim.treesitter.start()
         end
       end,
