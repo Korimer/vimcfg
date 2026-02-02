@@ -24,7 +24,9 @@ return {
     vim.api.nvim_create_autocmd("BufReadPost", {
       pattern = "*",
       callback = function()
-        vim.treesitter.start()
+        if vim.treesitter.get_parser(0,nil,{error=false}) ~= nil then
+          vim.treesitter.start()
+        end
       end,
     })
   end
