@@ -4,7 +4,7 @@ local target_langs = {
   "clangd",
   "superhtml", -- html-lsp from vscode is probably more standard but who cares
   "vtsls",
-  "basedpyright",
+  "basedpyright", "autopep8", "autoflake",
 
   {
     name = "lua-language-server",
