@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 lazyvim.json
+=======
+lazy-lock.json
+>>>>>>> 785d6d9 (dont install on nixos)
