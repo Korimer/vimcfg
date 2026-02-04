@@ -20,9 +20,7 @@ return {
       incremental_selection = { enable = true },
       textobjects = { enable = true }
     })
-    if vim.g.distro_name ~= "NixOS" then
-      require('nvim-treesitter').install(tsparsers, {max_jobs=1})
-    end
+    require('nvim-treesitter').install(tsparsers, {max_jobs=1})
     vim.api.nvim_create_autocmd("BufReadPost", {
       pattern = "*",
       callback = function()
