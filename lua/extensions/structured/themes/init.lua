@@ -1,7 +1,6 @@
 vim.g.boot_colorscheme = "slate"
 
 local extensions = {
-  require('extensions.structured.themes.feline'),
   { "catppuccin/nvim", name = "catppuccin" },
   { "alexpasmantier/hubbamax.nvim" },
   { "folke/tokyonight.nvim" },
