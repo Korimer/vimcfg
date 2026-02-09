@@ -1,5 +1,5 @@
 return {
     "calops/hmts.nvim",
     version = "*",
-    cond=false
+    cond=true
 }
