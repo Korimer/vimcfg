@@ -1,21 +1,39 @@
+
+vim.keymap.set({"n","v","i"},"<F6>",function ()
+  vim.print(vim.lsp.buf.hover())
+end, {noremap=true, silent=true})
+
+vim.keymap.set({"n","v","i"},"<F5>",function ()
+  vim.print("hi hello im here")
+  vim.print(vim.lsp.completion.get())
+end, {noremap=true, silent=true})
+
+vim.keymap.set({"n","v","i"},"<F4>",function ()
+  vim.print(require('cmp').get_entries())
+end, {noremap=true, silent=true})
+
 return {
   "hrsh7th/nvim-cmp",
   event = {"InsertEnter", "VeryLazy"},
   dependencies = {
+    -- core
+    "L3MON4D3/LuaSnip",
+    "saadparwaiz1/cmp_luasnip",
+    -- idk yet lol
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
-    "L3MON4D3/LuaSnip",
-    "saadparwaiz1/cmp_luasnip",
-    -- "ray-x/cmp-treesitter", -- uncomment if using treesitter completion
+    -- extensions
+    "jmbuhr/otter.nvim"
   },
-
   opts = function()
     local cmp = require('cmp')
     return {
-      experimental = { ghost_text = true },
+      -- Trying to get this manually done instead
+      experimental = { ghost_text = false },
       snippet = { expand = function(args) require('luasnip').lsp_expand(args.body) end },
       sources = cmp.config.sources({
+        { name = "async_path" },
         { name = "nvim_lsp" },
         { name = "luasnip" },
       }),
