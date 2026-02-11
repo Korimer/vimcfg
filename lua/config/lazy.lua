@@ -22,8 +22,14 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
 local imports = {}
-local extensionset = vim.fn.readdir(vim.fn.stdpath("config") .. "/lua/extensions/unstructured")
-for i=1, #extensionset do imports[i] = { import = "extensions/unstructured/" .. extensionset[i] } end
+local curfolder = Ori.concatPath({vim.fn.stdpath("config"),"lua","extensions","unstructured"})
+local extensionset = vim.fn.readdir(curfolder)
+for i=1, #extensionset do
+  local concatted = Ori.concatPath({curfolder,extensionset[i],"ignoreme"})
+  if not Ori.fileExists(concatted) then
+    imports[#imports+1] = { import = "extensions/unstructured/" .. extensionset[i] }
+  end
+end
 imports[#imports+1] = { import = "extensions/structured/" }
 imports[#imports+1] = { import = "config/Package-Managers/" }
 

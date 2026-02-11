@@ -10,7 +10,7 @@ for i=1, 4 do
   if string.match(sys_upper,systems[i]) then vim.g.env = systems[i] end
 end
 
-if vim.g.env == "WINDOWS" then 
+if vim.g.env == "WINDOWS" then
   vim.opt.runtimepath:prepend("C:/Program Files/Git/usr/bin;")
   vim.g.path_sep = "\\"
   --vim.env.PATH = "C:/Program Files/Git/usr/bin;" .. vim.env.PATH
@@ -24,6 +24,8 @@ local uname = h:read('*a')
 if string.match(uname,"NixOS") then distro = "NixOS" end
 vim.g.distro_name = distro
 h:close()
+
+Ori = require('config.funcs')
 
 -- give me my extensions (lol)
 require('config.lazy')
