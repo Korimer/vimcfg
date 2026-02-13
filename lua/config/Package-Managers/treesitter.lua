@@ -20,13 +20,15 @@ return {
       incremental_selection = { enable = true },
       textobjects = { enable = true }
     })
-    require('nvim-treesitter').install(tsparsers, {max_jobs=1})
+    require('nvim-treesitter').install(tsparsers)
     vim.api.nvim_create_autocmd("BufReadPost", {
       pattern = "*",
       callback = function()
+        -- If there exists a parser for this file, try to use it to the most
         if vim.treesitter.get_parser(0,nil,{error=false}) ~= nil then
           vim.cmd.syntax("off")
           vim.treesitter.start()
+          vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
         else
           vim.cmd.syntax("on")
         end
