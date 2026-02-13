@@ -35,7 +35,19 @@ return {
     },
 
     sources = {
-      default = { 'lsp', 'path', 'snippets', 'buffer' }
+      default = { 'path', 'snippets', 'buffer' },
+      providers = {
+        lsp = {
+          name = 'LSP',
+          module = 'blink.sources.lsp',
+          enabled = true,
+          async = false,
+          timeout = 2000,
+          min_keyword_length = 0,
+          fallbacks = { 'buffer' },
+          score_offset = 2 -- money
+        }
+      }
     },
 
     snippets = { preset = 'luasnip' },
