@@ -34,6 +34,8 @@ return {
       --list = { selection = { preselect = false }, cycle = { from_top = false } },
     },
 
+    -- See https://cmp.saghen.dev/configuration/reference#sources
+    -- And https://cmp.saghen.dev/configuration/sources#provider-options
     sources = {
       default = { 'path', 'snippets', 'buffer' },
       providers = {
@@ -49,9 +51,11 @@ return {
         }
       }
     },
-
     snippets = { preset = 'luasnip' },
-    fuzzy = { implementation = "prefer_rust_with_warning" }
+    fuzzy = {
+      implementation = "prefer_rust_with_warning",
+      sorts = { "exact", "score", "sort_text" }
+    }
   },
   opts_extend = { "sources.default" }
 }
