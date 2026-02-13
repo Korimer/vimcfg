@@ -20,6 +20,10 @@ return {
       --},
       --['<S-Tab>'] = { 'insert_prev' },
     },
+    cmdline = {
+      keymap = { preset = 'inherit' },
+      completion = { menu = { auto_show = true } },
+    },
 
     completion = {
       documentation = { auto_show = false },
