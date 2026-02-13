@@ -5,3 +5,5 @@ vim.diagnostic.config({ virtual_text = false, virtual_lines = { current_line = t
 vim.o.number = true
 vim.keymap.set("i","<C-r>+", "<C-r><C-o>+", {noremap=true, silent=true})
 vim.keymap.set({"n","v"}," ","<NOP>", {noremap=true, silent=true})
+vim.g.neovide_scale_factor = 0.8
+vim.o.cursorline = true
