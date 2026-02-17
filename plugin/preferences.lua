@@ -2,8 +2,6 @@ vim.opt.wildmenu = true
 vim.opt.wildoptions = "pum"
 vim.cmd("colorscheme " .. vim.g.boot_colorscheme)
 vim.diagnostic.config({ virtual_text = false, virtual_lines = { current_line = true} })
-vim.keymap.set("i","<C-r>+", "<C-r><C-o>+", {noremap=true, silent=true})
-vim.keymap.set({"n","v"}," ","<NOP>", {noremap=true, silent=true})
 vim.g.neovide_scale_factor = 0.8
 
 vim.opt.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal"

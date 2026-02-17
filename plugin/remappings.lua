@@ -6,6 +6,8 @@ vim.api.nvim_create_user_command("KillShada",function ()
   end
 end, {})
 
+vim.keymap.set("i","<C-r>+", "<C-r><C-o>+", {noremap=true, silent=true})
+vim.keymap.set({"n","v"}," ","<NOP>", {noremap=true, silent=true})
 vim.keymap.set('n','<F3>',':nohlsearch<CR>',{noremap=true; silent=true})
 vim.keymap.set('n','gd',vim.lsp.buf.definition,{noremap=true; silent=true})
 --vim.keymap.set('i',"<CR>",
