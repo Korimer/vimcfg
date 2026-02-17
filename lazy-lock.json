@@ -19,7 +19,7 @@
   "mru": { "branch": "master", "commit": "dcba22de1201523acda1e1a60d6fc3d9d7b6a519" },
   "multicursor.nvim": { "branch": "main", "commit": "a0ea3303a6c4b233cf3272fb1e358d4c842e5260" },
   "neo-tree.nvim": { "branch": "v3.x", "commit": "f3df514fff2bdd4318127c40470984137f87b62e" },
-  "neogit": { "branch": "master", "commit": "9104991a424f5e0891cbe1cb44f91ae22cef28a0" },
+  "neogit": { "branch": "master", "commit": "df323856553d4c5e5c41117606c63f628b24a3b0" },
   "nightfox.nvim": { "branch": "main", "commit": "ba47d4b4c5ec308718641ba7402c143836f35aa9" },
   "nordic.nvim": { "branch": "main", "commit": "4ce6bad95fde832f9bd10b991de846047a144628" },
   "nui.nvim": { "branch": "main", "commit": "de740991c12411b663994b2860f1a4fd0937c130" },
