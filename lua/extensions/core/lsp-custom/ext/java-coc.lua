@@ -1,4 +1,6 @@
 return {
   'nvim-java/nvim-java',
-  config = true
+  opts = {
+    java_debug_adapter = { enable = false }
+  }
 }
