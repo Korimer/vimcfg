@@ -22,4 +22,8 @@ return {
       end
     },
   },
+  config = function (_,opts)
+    require('auto-session').setup(opts)
+    vim.cmd('set sessionoptions=blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal')
+  end
 }
