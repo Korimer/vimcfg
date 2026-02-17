@@ -7,3 +7,5 @@ vim.keymap.set("i","<C-r>+", "<C-r><C-o>+", {noremap=true, silent=true})
 vim.keymap.set({"n","v"}," ","<NOP>", {noremap=true, silent=true})
 vim.g.neovide_scale_factor = 0.8
 vim.o.cursorline = true
+vim.api.nvim_create_autocmd("InsertEnter", { command = [[set norelativenumber]] })
+vim.api.nvim_create_autocmd("InsertLeave", { command = [[set relativenumber]] })

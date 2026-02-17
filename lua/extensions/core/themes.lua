@@ -1,6 +1,7 @@
 vim.g.boot_colorscheme = "slate"
 
 local extensions = {
+  { "Korimer/loucolor"},
   { "catppuccin/nvim", name = "catppuccin" },
   { "alexpasmantier/hubbamax.nvim" },
   { "folke/tokyonight.nvim" },

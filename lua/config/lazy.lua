@@ -30,7 +30,7 @@ for i=1, #extensionset do
     imports[#imports+1] = { import = "extensions/unstructured/" .. extensionset[i] }
   end
 end
-imports[#imports+1] = { import = "extensions/structured/" }
+imports[#imports+1] = { import = "extensions/core/" }
 imports[#imports+1] = { import = "config/Package-Managers/" }
 
 -- Setup lazy.nvim
