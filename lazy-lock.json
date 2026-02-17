@@ -37,5 +37,6 @@
   "telescope.nvim": { "branch": "master", "commit": "a0bbec21143c7bc5f8bb02e0005fa0b982edc026" },
   "tokyonight.nvim": { "branch": "main", "commit": "5da1b76e64daf4c5d410f06bcb6b9cb640da7dfd" },
   "vim-moonfly-colors": { "branch": "master", "commit": "d11b3d04cc1cb71a778d67a4df73283a5a6d66f4" },
+  "vim-python-pep8-indent": { "branch": "master", "commit": "60ba5e11a61618c0344e2db190210145083c91f8" },
   "vscode.nvim": { "branch": "main", "commit": "aa1102a7e15195c9cca22730b09224a7f7745ba8" }
 }
