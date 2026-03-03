@@ -35,6 +35,7 @@ imports[#imports+1] = { import = "config/Package-Managers/" }
 
 -- Setup lazy.nvim
 require("lazy").setup({
+  git = { url_format = "git@github.com:/%s.git" },
   spec = imports,
   change_detection = {
     enabled = true,
