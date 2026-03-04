@@ -6,6 +6,8 @@ local target_langs = {
   "vtsls",
   "basedpyright", "autopep8", "autoflake",
 
+  "css-lsp",
+
   {
     name = "lua-language-server",
     alias = "lua_ls",
