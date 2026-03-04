@@ -2,6 +2,15 @@ local tsparsers = {
   "c", "cpp", "python", "lua", "rust", "java", "javascript", "ini", "html"
 }
 
+local noindent_filetypes = {
+  "python"
+}
+
+local noindent = {}
+for i=1, #noindent_filetypes do
+  noindent[noindent_filetypes[i]] = true
+end
+
 return {
   "nvim-treesitter/nvim-treesitter",
   branch = "main",
@@ -25,10 +34,14 @@ return {
       pattern = "*",
       callback = function()
         -- If there exists a parser for this file, try to use it to the most
-        if vim.treesitter.get_parser(0,nil,{error=false}) ~= nil then
+        local parser = vim.treesitter.get_parser(0,nil,{error=false})
+
+        if parser ~= nil then
           vim.cmd.syntax("off")
           vim.treesitter.start()
-          vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+          if not noindent[vim.bo.filetype] then
+            vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+          end
         else
           vim.cmd.syntax("on")
         end

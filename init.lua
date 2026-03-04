@@ -2,6 +2,11 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- give me good indentation
+vim.cmd("set noautoindent")
+vim.cmd("set smartindent")
+vim.cmd("set nocindent")
+
 -- give me knowledge of what os i have
 vim.g.sysname = vim.loop.os_uname().sysname
 local sys_upper = string.upper(vim.g.sysname)
