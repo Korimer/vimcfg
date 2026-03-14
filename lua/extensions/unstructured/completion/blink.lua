@@ -5,6 +5,7 @@ return {
   -- apparently release tag = download prebuilt?
   version = '1.*',
   ---@module 'blink.cmp'
+
   ---@type blink.cmp.Config
   opts = {
     keymap = {
@@ -21,8 +22,9 @@ return {
       --['<S-Tab>'] = { 'insert_prev' },
     },
     cmdline = {
-      keymap = { preset = 'inherit' },
-      completion = { menu = { auto_show = true } },
+      enabled = true,
+      keymap = { preset = 'cmdline' },
+      completion = { menu = { auto_show = false } },
     },
 
     completion = {
