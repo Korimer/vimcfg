@@ -10,20 +10,23 @@ return {
   opts = {
     keymap = {
       preset = 'super-tab',
-      --['<Tab>'] = {
-      --  function(cmp)
-      --    vim.print("blink proc lol")
-      --    if false then
-      --      return cmp.insert_next()
-      --    end
-      --  end,
-      --  'fallback',
-      --},
-      --['<S-Tab>'] = { 'insert_prev' },
     },
     cmdline = {
       enabled = true,
-      keymap = { preset = 'cmdline' },
+      keymap = {
+        preset = 'cmdline',
+
+        ['<Tab>'] = { function (cmp)
+          if cmp.is_menu_visible() then
+            cmp.accept()
+          else
+            cmp.show_and_insert_or_accept_single()
+          end
+        end },
+      },
+
+
+
       completion = { menu = { auto_show = false } },
     },
 
