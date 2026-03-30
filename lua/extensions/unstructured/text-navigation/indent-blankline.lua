@@ -1,9 +1,6 @@
 return {
-    "lukas-reineke/indent-blankline.nvim",
-    main = "ibl",
-    cond = false,
-
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
-
-    opts = {},
+  "lukas-reineke/indent-blankline.nvim",
+  dependencies = { "nvim-treesitter/nvim-treesitter" },
+  main = "ibl",
+  opts = {},
 }
