@@ -2,7 +2,10 @@ return {
   'saghen/blink.pairs',
   dependencies = { 'saghen/blink.lib' },
   -- either this or download them from the github releases tab which is despicable bro wth
-  build = "cargo +nightly build --release",
+  build = vim.g.distro_name == "NixOS"
+    and "nix-shell -p stdenv.cc.cc --run 'cargo build --release'"
+    or "cargo +nightly build --release",
+
   opts = {
     mappings = {
       enabled = true,
