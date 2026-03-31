@@ -1,7 +1,6 @@
 return {
-  priority = 1000,
   'saghen/blink.pairs',
-  dependencies = { 'saghen/blink.download' },
+  dependencies = { 'saghen/blink.lib' },
   opts = {
     mappings = {
       enabled = true,
