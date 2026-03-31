@@ -1,6 +1,8 @@
 return {
   'saghen/blink.pairs',
   dependencies = { 'saghen/blink.lib' },
+  -- either this or download them from the github releases tab which is despicable bro wth
+  build = "cargo +nightly build --release",
   opts = {
     mappings = {
       enabled = true,
