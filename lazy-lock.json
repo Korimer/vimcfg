@@ -26,7 +26,7 @@
   "nordic.nvim": { "branch": "main", "commit": "4ce6bad95fde832f9bd10b991de846047a144628" },
   "nui.nvim": { "branch": "main", "commit": "de740991c12411b663994b2860f1a4fd0937c130" },
   "nvim-java": { "branch": "main", "commit": "602a5f7fa92f9c1d425a2159133ff9de86842f0a" },
-  "nvim-lspconfig": { "branch": "master", "commit": "16812abf0e8d8175155f26143a8504e8253e92b0" },
+  "nvim-lspconfig": { "branch": "master", "commit": "5492a24edd68f78d8a778edcb8905d0a28993abc" },
   "nvim-surround": { "branch": "main", "commit": "1098d7b3c34adcfa7feb3289ee434529abd4afd1" },
   "nvim-treesitter": { "branch": "main", "commit": "7caec274fd19c12b55902a5b795100d21531391f" },
   "nvim-ts-autotag": { "branch": "main", "commit": "c4ca798ab95b316a768d51eaaaee48f64a4a46bc" },
