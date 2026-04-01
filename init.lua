@@ -1,3 +1,6 @@
+if vim.loader then
+    vim.loader.enable()
+end
 -- give me a leader button
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
