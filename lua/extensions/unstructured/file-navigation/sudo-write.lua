@@ -55,7 +55,8 @@ if vim.g.env == "LINUX" then
   return {
     "https://github.com/lambdalisue/vim-suda",
     lazy = true,
-    cmd = { "SudaWrite", "SudaRead", "SW" },
+    cmd = { "SudaWrite", "SudaRead"},
   }
-
-else return {} end
+else
+  return {}
+end
