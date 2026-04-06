@@ -16,6 +16,8 @@ return {
   branch = "main",
   build = ':TSUpdate',
   lazy = false,
+  enable = false,
+  cond = false,
 
   opts = {
     install_dir = vim.fn.stdpath('data') .. '/treesitter',
