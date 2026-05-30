@@ -10,6 +10,9 @@ vim.cmd("set noautoindent")
 vim.cmd("set smartindent")
 vim.cmd("set nocindent")
 
+-- set termguicolors so my plugins dont break
+vim.cmd("set termguicolors")
+
 -- give me knowledge of what os i have
 vim.g.sysname = vim.loop.os_uname().sysname
 local sys_upper = string.upper(vim.g.sysname)
