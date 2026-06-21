@@ -15,8 +15,8 @@ vim.opt.smarttab = true;
 vim.opt.cursorline = true
 vim.opt.number = true
 vim.opt.autoindent = false
-vim.opt.smartindent = true
-vim.opt.cindent = false
+vim.opt.smartindent = false
+vim.opt.cindent = true
 -- and two more
 vim.api.nvim_create_autocmd("InsertEnter", { command = [[set norelativenumber]] })
 vim.api.nvim_create_autocmd("InsertLeave", { command = [[set relativenumber]] })
