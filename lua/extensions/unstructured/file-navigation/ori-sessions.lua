@@ -1,5 +1,7 @@
 return {
   -- "Korimer/ori-sessions"
   dir = "/home/korimer/Documents/cs/ori-sessions/"
-  ;config = true
+  ;opts = {
+    restore_prev_session = true
+  }
 }
