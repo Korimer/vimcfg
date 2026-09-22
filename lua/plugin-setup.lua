@@ -20,19 +20,29 @@ local resolveURL = function(modsource)
 end
 
 local reParseArgs = function(filename, spec)
+  if spec == nil then return nil end
+
   local simpleName = vim.fn.fnamemodify(filename, ":t:r")
   queueConfig(simpleName, spec)
-  if spec[1] ~= nil then
-    spec["src"] = spec[1]
+
+  if spec[1] == nil and spec["src"] == nil then
+    return nil
+  elseif spec[1] ~= nil then
+    spec["src"] = resolveURL(spec[1])
+  elseif spec["src"] ~= nil then
+    spec["src"] = resolveURL(spec["src"])
+  else
+    vim.notify("WARNING: should not set both array[1] and array['src'] for module " .. moduleAbsolutePath, vim.log.levels.WARN)
   end
-  spec["src"] = resolveURL(spec["src"])
+
   if spec["dependencies"] == nil then
     spec["dependencies"] = {}
-  else
-    for i=1, #spec["dependencies"] do
-      spec["dependencies"][i] = resolveURL(spec["dependencies"][i])
-    end
   end
+  for i=1, #spec["dependencies"] do
+    spec["dependencies"][i] = resolveURL(spec["dependencies"][i])
+  end
+
+  return spec
 end
 
 local allModules = {}
@@ -41,8 +51,8 @@ for name, ftype, err in vim.fs.dir(moduleRoot, {depth=9}) do
   if ftype == "file" and string.match(name,"[.]lua$") then
     local moduleAbsolutePath = vim.fs.joinpath(moduleRoot,name)
     local spec = dofile(moduleAbsolutePath)
+    spec = reParseArgs(name, spec)
     if spec ~= nil then
-      reParseArgs(name, spec)
       allModules[#allModules+1] = spec
       for i=1, #spec["dependencies"] do
         allModules[#allModules+1] = spec["dependencies"][i]
@@ -52,6 +62,7 @@ for name, ftype, err in vim.fs.dir(moduleRoot, {depth=9}) do
     end
   end
 end
+
 
 vim.pack.add(allModules, {confirm=false})
 for i=1, #configFuncs do

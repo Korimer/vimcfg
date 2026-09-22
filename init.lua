@@ -38,6 +38,6 @@ h:close()
 
 --Ori = require('config.funcs')
 
---require('pre-plugin')
+require('pre-plugin')
 require('plugin-setup')
 --require('post-plugin')
