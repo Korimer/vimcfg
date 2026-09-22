@@ -1,5 +1,13 @@
 {
   "plugins": {
+    "alpha-nvim": {
+      "rev": "4ba26e41990c11620c96c0e1cff20eab65efde4a",
+      "src": "https://github.com/goolord/alpha-nvim.git"
+    },
+    "mini.icons": {
+      "rev": "98faae31e9be1cc054ae63485e58ceb185efcad0",
+      "src": "https://github.com/nvim-mini/mini.icons.git"
+    },
     "neo-tree.nvim": {
       "rev": "162f9b953a692b559afe43e38d60afee81e8e79b",
       "src": "https://github.com/nvim-neo-tree/neo-tree.nvim"
