@@ -36,53 +36,8 @@ if string.match(uname,"NixOS") then distro = "NixOS" end
 vim.g.distro_name = distro
 h:close()
 
-Ori = require('config.funcs')
-----------------------
--- Lazy nvim bootstrap
-----------------------
+--Ori = require('config.funcs')
 
--- kludge to import everything in the modules folder
-local allModules = {}
-local moduleRoot = vim.fs.joinpath(vim.fn.stdpath("config"), "modules")
-for name, ftype, err in vim.fs.dir(moduleRoot, {depth=9}) do
-  if ftype == "file" and string.match(name,"[.]lua$") then
-    local moduleAbsolutePath = vim.fs.joinpath(moduleRoot,name)
-    allModules[#allModules+1] = dofile(moduleAbsolutePath)
-  end
-end
-
-local lazyArgs = {
-  git = {
-    url_format =
-      (vim.g.env == "WINDOWS" and "https://github.com/%s.git")
-      or (vim.g.env == "LINUX" and "git@github.com:/%s.git")
-    },
-  spec = allModules,
-  change_detection = {
-    enabled = true,
-    notify = false,
-  },
-  -- No luarocks
-  rocks = { enabled = false },
-  -- automatically check for plugin updates once a day
-  checker = { enabled = true, frequency = (60*60*24) },
-}
-
--- Bootstrap lazy.nvim
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not (vim.uv or vim.loop).fs_stat(lazypath) then
-  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
-  local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
-  if vim.v.shell_error ~= 0 then
-    vim.api.nvim_echo({
-      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-      { out, "WarningMsg" },
-      { "\nPress any key to exit..." },
-    }, true, {})
-    vim.fn.getchar()
-    os.exit(1)
-  end
-end
-vim.opt.rtp:prepend(lazypath)
-
-require("lazy").setup(lazyArgs)
+--require('pre-plugin')
+require('plugin-setup')
+--require('post-plugin')
