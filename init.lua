@@ -39,4 +39,4 @@ h:close()
 Ori = require('config.funcs')
 
 -- give me my extensions (lol)
-require('config.lazy')
+require('lazy')

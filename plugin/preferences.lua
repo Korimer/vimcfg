@@ -1,6 +1,6 @@
 vim.opt.wildmenu = true
 vim.opt.wildoptions = "pum"
-vim.cmd("colorscheme " .. vim.g.boot_colorscheme)
+--vim.cmd("colorscheme " .. vim.g.boot_colorscheme)
 vim.diagnostic.config({ virtual_text = false, virtual_lines = { current_line = true} })
 vim.g.neovide_scale_factor = 0.8
 
