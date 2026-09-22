@@ -38,6 +38,17 @@ h:close()
 
 --Ori = require('config.funcs')
 
-require('pre-plugin')
+local confdir = vim.fn.stdpath('config')
+
+local preplugin = vim.fs.joinpath(confdir,"lua","pre-plugin")
+for file in vim.fs.dir(preplugin) do
+  dofile(vim.fs.joinpath(preplugin,file))
+end
+
 require('plugin-setup')
---require('post-plugin')
+
+local postplugin = vim.fs.joinpath(confdir,"lua","post-plugin")
+for file in vim.fs.dir(postplugin) do
+  dofile(vim.fs.joinpath(postplugin,file))
+end
+
