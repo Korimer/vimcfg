@@ -4,6 +4,10 @@
       "rev": "4ba26e41990c11620c96c0e1cff20eab65efde4a",
       "src": "https://github.com/goolord/alpha-nvim.git"
     },
+    "milli.nvim": {
+      "rev": "6e94122fcc783bcee7d30b05cedc53beddb01104",
+      "src": "https://github.com/amansingh-afk/milli.nvim.git"
+    },
     "mini.icons": {
       "rev": "f642e3ba8c12afbc8f32f6d77ef6597eac56786f",
       "src": "https://github.com/nvim-mini/mini.icons.git"
