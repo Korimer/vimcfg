@@ -46,16 +46,8 @@ local allModules = {}
 local moduleRoot = vim.fs.joinpath(vim.fn.stdpath("config"), "modules")
 for name, ftype, err in vim.fs.dir(moduleRoot, {depth=9}) do
   if ftype == "file" and string.match(name,"[.]lua$") then
-    local oldPath = package.path
     local moduleAbsolutePath = vim.fs.joinpath(moduleRoot,name)
-    local moduleName = vim.fn.fnamemodify(moduleAbsolutePath,":t:r")
-    vim.print(moduleAbsolutePath)
-    vim.print(moduleName)
-
-    package.path = moduleAbsolutePath
-    allModules[#allModules+1] = require(moduleName)
-
-    package.path = oldPath
+    allModules[#allModules+1] = dofile(moduleAbsolutePath)
   end
 end
 
