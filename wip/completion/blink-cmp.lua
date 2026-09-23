@@ -2,8 +2,6 @@
 return {
   "saghen/blink.cmp",
   dependencies = { "L3MON4D3/LuaSnip" },
-  -- apparently release tag = download prebuilt?
-  version = '1.*',
   ---@module 'blink.cmp'
 
   ---@type blink.cmp.Config
@@ -24,9 +22,6 @@ return {
           end
         end },
       },
-
-
-
       completion = { menu = { auto_show = false } },
     },
 
