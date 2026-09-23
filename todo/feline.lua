@@ -1,9 +1,6 @@
 return {
   "famiu/feline.nvim",
-  dependencies = {
-    "lewis6991/gitsigns.nvim"
-  },
-  cond = vim.o.termguicolors,
+  dependencies = { "lewis6991/gitsigns.nvim" },
   config = function ()
     require('feline').setup()
     require('feline').winbar.setup()

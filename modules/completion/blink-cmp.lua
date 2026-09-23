@@ -1,9 +1,9 @@
 -- as opposed to .182
 return {
   "saghen/blink.cmp",
-  dependencies = { "L3MON4D3/LuaSnip" },
+  --dependencies = { "L3MON4D3/LuaSnip" },
+  version = vim.version.range("1*"),
   ---@module 'blink.cmp'
-
   ---@type blink.cmp.Config
   opts = {
     keymap = {
@@ -44,7 +44,7 @@ return {
     sources = {
       default = {'lsp', 'path', 'snippets', 'buffer' },
     },
-    snippets = { preset = 'luasnip' },
+    -- snippets = { preset = 'luasnip' },
     fuzzy = {
       implementation = "prefer_rust_with_warning",
       sorts = { "exact", "score", "sort_text" }
