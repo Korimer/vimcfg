@@ -32,7 +32,7 @@ local reParseArgs = function(filename, spec)
   elseif spec["src"] ~= nil then
     spec["src"] = resolveURL(spec["src"])
   else
-    vim.notify("WARNING: should not set both array[1] and array['src'] for module " .. moduleAbsolutePath, vim.log.levels.WARN)
+    vim.notify("WARNING: should not set both array[1] and array['src'] for module " .. filename, vim.log.levels.WARN)
   end
 
   if spec["dependencies"] == nil then

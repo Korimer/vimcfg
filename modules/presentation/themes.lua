@@ -1,15 +1,13 @@
-vim.g.boot_colorscheme = "slate"
-
 local extensions = {
-  { "Korimer/loucolor" },
-  { "catppuccin/nvim", name = "catppuccin" },
-  { "alexpasmantier/hubbamax.nvim" },
-  { "folke/tokyonight.nvim" },
-  { "EdenEast/nightfox.nvim" },
-  { "AlexvZyl/nordic.nvim" },
-  { "bluz71/vim-moonfly-colors" },
-  { "Mofiqul/vscode.nvim" },
-  { "craftzdog/solarized-osaka.nvim" },
+  "Korimer/loucolor",
+  "catppuccin/nvim",
+  "alexpasmantier/hubbamax.nvim",
+  "folke/tokyonight.nvim",
+  "EdenEast/nightfox.nvim",
+  "AlexvZyl/nordic.nvim",
+  "bluz71/vim-moonfly-colors",
+  "Mofiqul/vscode.nvim",
+  "craftzdog/solarized-osaka.nvim",
 }
 
 vim.keymap.set("n","<A-=>", function()
@@ -36,4 +34,4 @@ vim.api.nvim_create_autocmd("User", {
     vim.g.colorscheme_selected = (function() for i,v in ipairs(vim.g.all_colorschemes) do if v==vim.g.boot_colorscheme then return i end end end)()
   end
 })
-return extensions
+return { dependencies = extensions }

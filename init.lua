@@ -36,7 +36,8 @@ if string.match(uname,"NixOS") then distro = "NixOS" end
 vim.g.distro_name = distro
 h:close()
 
---Ori = require('config.funcs')
+
+require('globals')
 
 local confdir = vim.fn.stdpath('config')
 

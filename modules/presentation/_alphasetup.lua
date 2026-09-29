@@ -172,6 +172,29 @@ local section_mru = {
     },
 }
 
+local section_mru_session = {
+    type = "group",
+    val = {
+        {
+            type = "text",
+            val = "Recent files",
+            opts = {
+                hl = "SpecialComment",
+                shrink_margin = false,
+                position = "center",
+            },
+        },
+        { type = "padding", val = 1 },
+        {
+            type = "group",
+            val = function()
+                return { mru(0, vim.fn.getcwd()) }
+            end,
+            opts = { shrink_margin = false },
+        },
+    },
+}
+
 local section_mru_git = {
     type = "group",
     val = function()
@@ -210,8 +233,8 @@ local buttons = {
     val = {
         { type = "text",    val = "Quick links", opts = { hl = "SpecialComment", position = "center" } },
         { type = "padding", val = 1 },
-        dashboard.button("i", "  New file", "<cmd>ene<CR>"),
-        dashboard.button("e", "  Open Folder", "<cmd>e .<CR>"),
+        dashboard.button("e", "  New file", "<cmd>ene<CR>"),
+        dashboard.button("o", "  Open Folder", "<cmd>e .<CR>"),
         dashboard.button("SPC f f", "󰈞  Find file"),
         dashboard.button("SPC f g", "󰊄  Live grep"),
         dashboard.button("c", "  Configuration", "<cmd>exe 'cd' stdpath ('config')<CR>"),
