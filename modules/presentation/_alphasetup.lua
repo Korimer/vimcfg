@@ -210,7 +210,8 @@ local buttons = {
     val = {
         { type = "text",    val = "Quick links", opts = { hl = "SpecialComment", position = "center" } },
         { type = "padding", val = 1 },
-        dashboard.button("e", "  New file", "<cmd>ene<CR>"),
+        dashboard.button("i", "  New file", "<cmd>ene<CR>"),
+        dashboard.button("e", "  Open Folder", "<cmd>e .<CR>"),
         dashboard.button("SPC f f", "󰈞  Find file"),
         dashboard.button("SPC f g", "󰊄  Live grep"),
         dashboard.button("c", "  Configuration", "<cmd>exe 'cd' stdpath ('config')<CR>"),

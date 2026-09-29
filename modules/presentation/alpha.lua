@@ -12,6 +12,5 @@ return {
     local configFile = vim.fs.joinpath(mydir, configFileLocation)
     local config = dofile(configFile).config
     require'alpha'.setup(config)
-    --require'alpha.term'
   end
 }
