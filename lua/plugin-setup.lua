@@ -45,10 +45,17 @@ local reParseArgs = function(filename, spec)
   return spec
 end
 
+local filenameIsValid = function (filename)
+  local shortname = vim.fn.fnamemodify(filename, ":t")
+  local is_lua = string.match(shortname,"%.lua$") 
+  local is_visible = not string.match(shortname,"^[_.]")
+  return is_lua and is_visible
+end
+
 local allModules = {}
 local moduleRoot = vim.fs.joinpath(vim.fn.stdpath("config"), "modules")
 for name, ftype, err in vim.fs.dir(moduleRoot, {depth=9}) do
-  if ftype == "file" and string.match(name,"[.]lua$") then
+  if ftype == "file" and filenameIsValid(name) then
     local moduleAbsolutePath = vim.fs.joinpath(moduleRoot,name)
     local spec = dofile(moduleAbsolutePath)
     spec = reParseArgs(name, spec)
