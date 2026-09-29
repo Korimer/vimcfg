@@ -1,5 +1,9 @@
 {
   "plugins": {
+    "alpha-nvim": {
+      "rev": "4ba26e41990c11620c96c0e1cff20eab65efde4a",
+      "src": "https://github.com/goolord/alpha-nvim.git"
+    },
     "blink.cmp": {
       "rev": "78336bc89ee5365633bcf754d93df01678b5c08f",
       "src": "https://github.com/saghen/blink.cmp.git",
@@ -24,6 +28,10 @@
     "milli.nvim": {
       "rev": "6e94122fcc783bcee7d30b05cedc53beddb01104",
       "src": "https://github.com/amansingh-afk/milli.nvim.git"
+    },
+    "mini.icons": {
+      "rev": "f642e3ba8c12afbc8f32f6d77ef6597eac56786f",
+      "src": "https://github.com/nvim-mini/mini.icons.git"
     },
     "neo-tree.nvim": {
       "rev": "162f9b953a692b559afe43e38d60afee81e8e79b",
@@ -52,10 +60,6 @@
     "plenary.nvim": {
       "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
       "src": "https://github.com/nvim-lua/plenary.nvim.git"
-    },
-    "startup.nvim": {
-      "rev": "bd835f4fd95dbb30cb4607a8d7a090216fb6d035",
-      "src": "https://github.com/max397574/startup.nvim.git"
     }
   }
 }

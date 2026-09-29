@@ -9,13 +9,20 @@ local asciilogo = {
 }
 
 return {
-  src = 'max397574/startup.nvim',
-  opts = {
-    section_1 = {
+  src = 'goolord/alpha-nvim',
+  dependencies = {
+    'nvim-mini/mini.icons',
+    'nvim-lua/plenary.nvim'
+  },
+  config = function ()
+    local baseconf = require'alpha.themes.theta'.config
+    local blayout = baseconf.layout
+    blayout[2] = {
+      opts = { hl="Type", position="center" },
       type = "text",
-      title = "Header",
-      content = asciilogo
-    },
-    theme = "dashboard"
-  }
+      val = asciilogo
+    }
+    require'alpha'.setup(baseconf)
+    --require'alpha.term'
+  end
 }
