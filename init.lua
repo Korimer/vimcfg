@@ -41,6 +41,12 @@ require('globals')
 
 local confdir = vim.fn.stdpath('config')
 
+local myfuncs = vim.fs.joinpath(confdir,"lua","myfunctions")
+for file in vim.fs.dir(myfuncs) do
+  vim.print(file)
+  dofile(vim.fs.joinpath(myfuncs,file))
+end
+
 local preplugin = vim.fs.joinpath(confdir,"lua","pre-plugin")
 for file in vim.fs.dir(preplugin) do
   dofile(vim.fs.joinpath(preplugin,file))

@@ -7,9 +7,8 @@ return {
     'nvim-lua/plenary.nvim'
   },
   config = function ()
-    local mypath = debug.getinfo(1, "S").source:sub(2)
-    local mydir = vim.fn.fnamemodify(mypath,":h")
-    local configFile = vim.fs.joinpath(mydir, configFileLocation)
+    local configFile = vim.my.fn.fromscriptroot(configFileLocation)
+
     local config = dofile(configFile).config
     require'alpha'.setup(config)
   end

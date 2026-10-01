@@ -131,7 +131,19 @@ local function mru_git(start, cwd, items_number, opts)
     return _mru_impl(utils.get_git_files, start, cwd, items_number, opts)
 end
 
+local ascii = vim.my.fn.fromscriptroot("moonascii.ansi")
 local header = {
+    type = "text",
+    val = vim.fn.readfile(ascii),
+    opts = {
+        position = "center",
+        hl = "Type",
+        -- wrap = "overflow";
+    },
+}
+
+
+local header2 = {
     type = "text",
     val = {
       [[   \  |  ____| \ \     / ____|   _ \  |  |   |  |   |  \  |     \      \  |  ]],
