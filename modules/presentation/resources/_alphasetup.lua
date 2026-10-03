@@ -131,17 +131,15 @@ local function mru_git(start, cwd, items_number, opts)
     return _mru_impl(utils.get_git_files, start, cwd, items_number, opts)
 end
 
-local ascii = vim.my.fn.fromscriptroot("moonascii.ansi")
-local header = {
-    type = "text",
-    val = vim.fn.readfile(ascii),
-    opts = {
-        position = "center",
-        hl = "Type",
-        -- wrap = "overflow";
-    },
-}
-
+local ansi = vim.my.fn.fromscriptroot("_moon-ansi.lua")
+local header = dofile(ansi)
+-- Re-apply colors whenever i change colorscheme
+vim.api.nvim_create_autocmd({"VimEnter", "ColorScheme"}, {
+  nested = true,
+  callback = function()
+    dofile(ansi)
+  end,
+})
 
 local header2 = {
     type = "text",

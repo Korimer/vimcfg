@@ -11,7 +11,7 @@ vim.cmd("set smartindent")
 vim.cmd("set nocindent")
 
 -- set termguicolors so my plugins dont break
-vim.cmd("set termguicolors")
+vim.opt.termguicolors = true
 
 -- give me knowledge of what os i have
 vim.g.sysname = vim.loop.os_uname().sysname
@@ -43,7 +43,6 @@ local confdir = vim.fn.stdpath('config')
 
 local myfuncs = vim.fs.joinpath(confdir,"lua","myfunctions")
 for file in vim.fs.dir(myfuncs) do
-  vim.print(file)
   dofile(vim.fs.joinpath(myfuncs,file))
 end
 
