@@ -29,9 +29,9 @@ return {
             -- title = 'Neo-tree Preview',
           },
         },
-        ['e'] = function() vim.cmd('Neotree focus filesystem left', true) end,
-        ['b'] = function() vim.cmd('Neotree focus buffers left', true) end,
-        ['g'] = function() vim.cmd('Neotree focus git_status left', true) end,
+        --['e'] = function() vim.cmd('Neotree focus filesystem left', true) end,
+        --['b'] = function() vim.cmd('Neotree focus buffers left', true) end,
+        --['g'] = function() vim.cmd('Neotree focus git_status left', true) end,
       }
     }
   },
