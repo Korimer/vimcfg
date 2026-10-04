@@ -1,41 +1,74 @@
 {
   "plugins": {
+    "alpha": {
+      "rev": "4ba26e41990c11620c96c0e1cff20eab65efde4a",
+      "src": "https://github.com/goolord/alpha-nvim.git"
+    },
     "alpha-nvim": {
       "rev": "4ba26e41990c11620c96c0e1cff20eab65efde4a",
       "src": "https://github.com/goolord/alpha-nvim.git"
+    },
+    "blink-cmp": {
+      "rev": "78336bc89ee5365633bcf754d93df01678b5c08f",
+      "src": "https://github.com/saghen/blink.cmp.git",
+      "version": "1.0.0 - 2.0.0"
     },
     "blink.cmp": {
       "rev": "78336bc89ee5365633bcf754d93df01678b5c08f",
       "src": "https://github.com/saghen/blink.cmp.git",
       "version": "1.0.0 - 2.0.0"
     },
+    "fidget": {
+      "rev": "9e0201673e08e997e7cf52afca5565c70bd117f3",
+      "src": "https://github.com/j-hui/fidget.nvim.git"
+    },
     "fidget.nvim": {
       "rev": "9e0201673e08e997e7cf52afca5565c70bd117f3",
       "src": "https://github.com/j-hui/fidget.nvim.git"
+    },
+    "gitsigns": {
+      "rev": "070a5d7b985546cc57e1fc61e5bc507fecac6045",
+      "src": "https://github.com/lewis6991/gitsigns.nvim.git"
     },
     "gitsigns.nvim": {
       "rev": "070a5d7b985546cc57e1fc61e5bc507fecac6045",
       "src": "https://github.com/lewis6991/gitsigns.nvim.git"
     },
+    "indent-blankline": {
+      "rev": "f1e186e44d3b7f9ae918008e2c28ce37c6023d2d",
+      "src": "https://github.com/lukas-reineke/indent-blankline.nvim.git"
+    },
     "indent-blankline.nvim": {
       "rev": "f1e186e44d3b7f9ae918008e2c28ce37c6023d2d",
       "src": "https://github.com/lukas-reineke/indent-blankline.nvim.git"
+    },
+    "iron": {
+      "rev": "0168b419bc7df70cd2d97c2ec8158b6b002450b2",
+      "src": "https://github.com/Vigemus/iron.nvim.git"
     },
     "iron.nvim": {
       "rev": "0168b419bc7df70cd2d97c2ec8158b6b002450b2",
       "src": "https://github.com/Vigemus/iron.nvim.git"
     },
+    "jupytext": {
+      "rev": "c8baf3ad344c59b3abd461ecc17fc16ec44d0f7b",
+      "src": "https://github.com/GCBallesteros/jupytext.nvim.git"
+    },
     "jupytext.nvim": {
       "rev": "c8baf3ad344c59b3abd461ecc17fc16ec44d0f7b",
       "src": "https://github.com/GCBallesteros/jupytext.nvim.git"
+    },
+    "lazy-lsp": {
+      "rev": "7b1f82baa42550cb107271c576ea5044774374b5",
+      "src": "https://github.com/dundalek/lazy-lsp.nvim.git"
     },
     "lazy-lsp.nvim": {
       "rev": "7b1f82baa42550cb107271c576ea5044774374b5",
       "src": "https://github.com/dundalek/lazy-lsp.nvim.git"
     },
-    "magma-nvim": {
-      "rev": "ff3deba8a879806a51c005e50782130246143d06",
-      "src": "https://github.com/dccsillag/magma-nvim.git"
+    "milli": {
+      "rev": "b69890078dfde44cf71d192bbb02027f81aff1b1",
+      "src": "https://github.com/amansingh-afk/milli.nvim.git"
     },
     "milli.nvim": {
       "rev": "b69890078dfde44cf71d192bbb02027f81aff1b1",
@@ -45,14 +78,19 @@
       "rev": "f642e3ba8c12afbc8f32f6d77ef6597eac56786f",
       "src": "https://github.com/nvim-mini/mini.icons.git"
     },
-    "molten-nvim": {
-      "rev": "bedea63819c618e007e7c40059fc6e72d598c8df",
-      "src": "https://github.com/benlubas/molten-nvim.git",
-      "version": "1.0.0 - 2.0.0"
+    "neo-tree": {
+      "rev": "f3f3bf73414e400cf9fc13fda50f00404a8f8ab1",
+      "src": "https://github.com/nvim-neo-tree/neo-tree.nvim.git",
+      "version": "3.0.0 - 4.0.0"
     },
     "neo-tree.nvim": {
       "rev": "020e50ff7fdaa0d76de23cfe5c485504729483b0",
-      "src": "https://github.com/nvim-neo-tree/neo-tree.nvim.git"
+      "src": "https://github.com/nvim-neo-tree/neo-tree.nvim.git",
+      "version": "3.0.0 - 4.0.0"
+    },
+    "neotree-file-nesting-config": {
+      "rev": "089adb6d3e478771f4485be96128796fb01a20c4",
+      "src": "https://github.com/saifulapm/neotree-file-nesting-config.git"
     },
     "neovim-session-manager": {
       "rev": "89d253a6c68af60b49570044591d5b8701866601",
@@ -65,10 +103,6 @@
     "nvim-highlight-colors": {
       "rev": "e4c7af0211866162d999ce0bdd6a029302e19139",
       "src": "https://github.com/brenoprata10/nvim-highlight-colors.git"
-    },
-    "nvim-ipynb": {
-      "rev": "a7f914bf5cbcfb2cb405dc5d47690a989f5b577d",
-      "src": "https://github.com/zchown/nvim-ipynb.git"
     },
     "nvim-lspconfig": {
       "rev": "3e8d598d3b5f8338a41699c436e5fa11d2666cf0",
@@ -85,6 +119,10 @@
     "plenary.nvim": {
       "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
       "src": "https://github.com/nvim-lua/plenary.nvim.git"
+    },
+    "session_manager": {
+      "rev": "89d253a6c68af60b49570044591d5b8701866601",
+      "src": "https://github.com/Shatur/neovim-session-manager.git"
     }
   }
 }

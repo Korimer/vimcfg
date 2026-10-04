@@ -1,14 +1,20 @@
 local configFuncs = {}
-local queueConfig = function (name, spec)
-  if spec["opts"] ~= nil then
-    if spec["config"] == nil then
-      configFuncs[#configFuncs+1] = function() require(name).setup(spec["opts"]) end
-    else
-      vim.notify("WARNING: you should not set both opts and config.", vim.log.levels.WARN)
-    end
-  elseif spec["config"] then
-    configFuncs[#configFuncs+1] = spec["config"]
+local queueConfig = function (spec)
+  -- If neither opts nor config is set, do nothing
+  if spec["opts"] == nil and spec["config"] == nil then
+    return spec
   end
+
+  local opts = spec["opts"] or {}
+  local configFunc
+  if spec["config"] == nil then
+    -- By default, run setup specified by name
+    configFunc = function() require(spec["name"]).setup(opts) end
+  else
+    -- Otherwise, run the user-provided config func
+    configFunc = function() spec["config"](opts) end
+  end
+  configFuncs[#configFuncs+1] = configFunc
 end
 
 local resolveURL = function(modsource)
@@ -22,8 +28,8 @@ end
 local reParseArgs = function(filename, spec)
   if spec == nil then return nil end
 
-  local simpleName = vim.fn.fnamemodify(filename, ":t:r")
-  queueConfig(simpleName, spec)
+  spec["name"] = spec["name"] or vim.fn.fnamemodify(filename, ":t:r")
+  queueConfig(spec)
 
   if spec[1] == nil and spec["src"] == nil then
     return nil
