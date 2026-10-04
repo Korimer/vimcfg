@@ -2,7 +2,8 @@ return {
   src = 'goolord/alpha-nvim',
   dependencies = {
     'nvim-mini/mini.icons',
-    'nvim-lua/plenary.nvim'
+    'nvim-lua/plenary.nvim',
+    'Shatur/neovim-session-manager',
   },
   config = function ()
     local configFile = vim.my.fn.fromscriptroot("./resources/_alphasetup.lua")
