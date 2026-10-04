@@ -18,3 +18,7 @@ vim.api.nvim_create_user_command("PluginListAll", function()
   end
 end, {})
 
+vim.api.nvim_create_user_command("PluginUpdateAll", function()
+  vim.pack.update()
+  vim.cmd("UpdateRemotePlugins")
+end, {})
