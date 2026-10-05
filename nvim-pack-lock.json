@@ -14,8 +14,12 @@
       "src": "https://github.com/j-hui/fidget.nvim.git"
     },
     "gitsigns": {
-      "rev": "070a5d7b985546cc57e1fc61e5bc507fecac6045",
+      "rev": "851a051e2bd2caba97e23314c68d69f1b1cf5d19",
       "src": "https://github.com/lewis6991/gitsigns.nvim.git"
+    },
+    "hubbamax.nvim": {
+      "rev": "c45f568b1018529fe9c1f657806cfd3106df33b7",
+      "src": "https://github.com/alexpasmantier/hubbamax.nvim.git"
     },
     "hydra": {
       "rev": "8c4a9f621ec7cdc30411a1f3b6d5eebb12b469dc",
@@ -36,6 +40,10 @@
     "lazy-lsp": {
       "rev": "7b1f82baa42550cb107271c576ea5044774374b5",
       "src": "https://github.com/dundalek/lazy-lsp.nvim.git"
+    },
+    "loucolor": {
+      "rev": "16a3cafe7e08a74cf231b43427961b56d69125dc",
+      "src": "git@github.com:Korimer/loucolor"
     },
     "milli": {
       "rev": "b69890078dfde44cf71d192bbb02027f81aff1b1",
@@ -58,16 +66,28 @@
       "rev": "89d253a6c68af60b49570044591d5b8701866601",
       "src": "https://github.com/Shatur/neovim-session-manager.git"
     },
+    "nightfox.nvim": {
+      "rev": "4dacd3f0185a2227bdf3b6c0975a8f0bf87cac9a",
+      "src": "https://github.com/EdenEast/nightfox.nvim.git"
+    },
+    "nordic.nvim": {
+      "rev": "9fb62116b891184049c50ca6ffb0d3bc100a1a6e",
+      "src": "https://github.com/AlexvZyl/nordic.nvim.git"
+    },
     "nui.nvim": {
       "rev": "10fc361835c856ba4233ef5ea135b919bf3dce97",
       "src": "https://github.com/MunifTanjim/nui.nvim.git"
+    },
+    "nvim": {
+      "rev": "edefef779ab08ce1a4a404713e3012b0d202bd35",
+      "src": "https://github.com/catppuccin/nvim.git"
     },
     "nvim-highlight-colors": {
       "rev": "e4c7af0211866162d999ce0bdd6a029302e19139",
       "src": "https://github.com/brenoprata10/nvim-highlight-colors.git"
     },
     "nvim-lspconfig": {
-      "rev": "3e8d598d3b5f8338a41699c436e5fa11d2666cf0",
+      "rev": "910f0c4d46aa186641518395bc7e6fffb4d23baf",
       "src": "https://github.com/neovim/nvim-lspconfig.git"
     },
     "nvim-surround": {
@@ -90,6 +110,22 @@
     "session_manager": {
       "rev": "89d253a6c68af60b49570044591d5b8701866601",
       "src": "https://github.com/Shatur/neovim-session-manager.git"
+    },
+    "solarized-osaka.nvim": {
+      "rev": "a21176efde15fab21fabda0bf2ba123ed6d7332d",
+      "src": "https://github.com/craftzdog/solarized-osaka.nvim.git"
+    },
+    "tokyonight.nvim": {
+      "rev": "cdc07ac78467a233fd62c493de29a17e0cf2b2b6",
+      "src": "https://github.com/folke/tokyonight.nvim.git"
+    },
+    "vim-moonfly-colors": {
+      "rev": "2c883835f5b7b380a0a9e80695c420f7efebdfe4",
+      "src": "https://github.com/bluz71/vim-moonfly-colors.git"
+    },
+    "vscode.nvim": {
+      "rev": "6439ed89d0e10193f07e92268a321d7c6f6e93ee",
+      "src": "https://github.com/Mofiqul/vscode.nvim.git"
     }
   }
 }

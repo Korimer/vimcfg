@@ -1,5 +1,5 @@
 local extensions = {
-  "Korimer/loucolor",
+  "git@github.com:Korimer/loucolor",
   "catppuccin/nvim",
   "alexpasmantier/hubbamax.nvim",
   "folke/tokyonight.nvim",
@@ -34,4 +34,8 @@ vim.api.nvim_create_autocmd("User", {
     vim.g.colorscheme_selected = (function() for i,v in ipairs(vim.g.all_colorschemes) do if v==vim.g.boot_colorscheme then return i end end end)()
   end
 })
-return { dependencies = extensions }
+
+return {
+  src = false,
+  dependencies = extensions
+}

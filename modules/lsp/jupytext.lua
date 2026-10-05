@@ -1,4 +1,4 @@
 return {
   'GCBallesteros/jupytext.nvim',
-  opts = {}
+  config = true
 }
