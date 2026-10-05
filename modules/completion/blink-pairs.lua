@@ -15,11 +15,9 @@ vim.api.nvim_create_autocmd("PackChanged", {
 return {
   'saghen/blink.pairs',
   dependencies = { 'saghen/blink.lib' },
-  -- either this or download them from the github releases tab which is despicable bro wth
   version = vim.version.range("*"),
 
   config = function (opts)
-    require('blink.pairs').download():pwait(60000)
     require('blink-pairs').setup(opts)
   end,
 

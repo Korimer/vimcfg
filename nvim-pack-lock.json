@@ -4,10 +4,23 @@
       "rev": "4ba26e41990c11620c96c0e1cff20eab65efde4a",
       "src": "https://github.com/goolord/alpha-nvim.git"
     },
+    "barbecue": {
+      "rev": "3e31404f0b93a2c30d151abf0648650ac811c664",
+      "src": "https://github.com/utilyre/barbecue.nvim.git"
+    },
     "blink-cmp": {
       "rev": "78336bc89ee5365633bcf754d93df01678b5c08f",
       "src": "https://github.com/saghen/blink.cmp.git",
       "version": "1.0.0 - 2.0.0"
+    },
+    "blink-pairs": {
+      "rev": "c382bc4ba0229211c8ae19491bb7aa930c051a42",
+      "src": "https://github.com/saghen/blink.pairs.git",
+      "version": ">=0.0.0"
+    },
+    "blink.lib": {
+      "rev": "fd9a48ebbe6ec30d5dfcc5b42c243941ccdca1aa",
+      "src": "https://github.com/saghen/blink.lib.git"
     },
     "fidget": {
       "rev": "9e0201673e08e997e7cf52afca5565c70bd117f3",
@@ -16,6 +29,10 @@
     "gitsigns": {
       "rev": "851a051e2bd2caba97e23314c68d69f1b1cf5d19",
       "src": "https://github.com/lewis6991/gitsigns.nvim.git"
+    },
+    "hml": {
+      "rev": "54b4d0a4d800f79310443f9a26d54023daeb9e7c",
+      "src": "https://github.com/mawkler/hml.nvim.git"
     },
     "hubbamax.nvim": {
       "rev": "c45f568b1018529fe9c1f657806cfd3106df33b7",
@@ -45,6 +62,10 @@
       "rev": "16a3cafe7e08a74cf231b43427961b56d69125dc",
       "src": "git@github.com:Korimer/loucolor"
     },
+    "lualine": {
+      "rev": "221ce6b2d999187044529f49da6554a92f740a96",
+      "src": "https://github.com/nvim-lualine/lualine.nvim.git"
+    },
     "milli": {
       "rev": "b69890078dfde44cf71d192bbb02027f81aff1b1",
       "src": "https://github.com/amansingh-afk/milli.nvim.git"
@@ -52,6 +73,10 @@
     "mini.icons": {
       "rev": "f642e3ba8c12afbc8f32f6d77ef6597eac56786f",
       "src": "https://github.com/nvim-mini/mini.icons.git"
+    },
+    "modicator": {
+      "rev": "7f867b4980946f115f4ccb922637d70d89a59cb4",
+      "src": "https://github.com/mawkler/modicator.nvim.git"
     },
     "neo-tree": {
       "rev": "f3f3bf73414e400cf9fc13fda50f00404a8f8ab1",
@@ -89,6 +114,10 @@
     "nvim-lspconfig": {
       "rev": "910f0c4d46aa186641518395bc7e6fffb4d23baf",
       "src": "https://github.com/neovim/nvim-lspconfig.git"
+    },
+    "nvim-navic": {
+      "rev": "455808fd0fae06e6d70fadfd61432275db8f34ce",
+      "src": "https://github.com/SmiteshP/nvim-navic.git"
     },
     "nvim-surround": {
       "rev": "1098d7b3c34adcfa7feb3289ee434529abd4afd1",
