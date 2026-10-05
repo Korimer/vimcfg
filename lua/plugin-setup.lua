@@ -23,7 +23,7 @@ end
 local resolveURL = function(modsource)
   if string.match(modsource,"^https://") then
     return modsource
-  elseif string.match(modsource,"^%w+@%w") then
+  elseif string.match(modsource,"^%w+@") then
     return modsource
   else
     return "https://github.com/" .. modsource .. ".git"
@@ -31,7 +31,7 @@ local resolveURL = function(modsource)
 end
 
 local reParseArgs = function(filename, spec)
-  if spec == nil then return nil end
+  if spec == nil then return {} end
 
   spec["name"] = spec["name"] or vim.fn.fnamemodify(filename, ":t:r")
   queueConfig(spec)
@@ -56,6 +56,7 @@ local reParseArgs = function(filename, spec)
   if spec["dependencies"] == nil then
     spec["dependencies"] = {}
   end
+
   for i=1, #spec["dependencies"] do
     spec["dependencies"][i] = resolveURL(spec["dependencies"][i])
   end
@@ -86,6 +87,9 @@ for name, ftype, err in vim.fs.dir(moduleRoot, {depth=9}) do
       end
     else
       vim.notify("WARNING: spec is nil for file" .. moduleAbsolutePath, vim.log.levels.WARN)
+    end
+    for i=1, #spec["dependencies"] do
+      allModules[#allModules+1] = spec["dependencies"][i]
     end
   end
 end
