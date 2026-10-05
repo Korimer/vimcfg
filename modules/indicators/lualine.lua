@@ -1,4 +1,4 @@
-vim.opt.laststatus = 2 -- aka, one statusline per window
+vim.opt.laststatus = 3 -- Aka one global statusline
 return {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
