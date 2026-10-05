@@ -5,8 +5,8 @@
       "src": "https://github.com/goolord/alpha-nvim.git"
     },
     "barbecue": {
-      "rev": "3e31404f0b93a2c30d151abf0648650ac811c664",
-      "src": "https://github.com/utilyre/barbecue.nvim.git"
+      "rev": "f7c6fa21e2a7c32576e7a1791774a3736987f467",
+      "src": "https://github.com/Bekaboo/dropbar.nvim.git"
     },
     "blink-cmp": {
       "rev": "78336bc89ee5365633bcf754d93df01678b5c08f",
@@ -114,10 +114,6 @@
     "nvim-lspconfig": {
       "rev": "910f0c4d46aa186641518395bc7e6fffb4d23baf",
       "src": "https://github.com/neovim/nvim-lspconfig.git"
-    },
-    "nvim-navic": {
-      "rev": "455808fd0fae06e6d70fadfd61432275db8f34ce",
-      "src": "https://github.com/SmiteshP/nvim-navic.git"
     },
     "nvim-surround": {
       "rev": "1098d7b3c34adcfa7feb3289ee434529abd4afd1",
