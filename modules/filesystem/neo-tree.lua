@@ -9,6 +9,11 @@ return {
   },
   config = function (opts)
     opts.nesting_rules = require('neotree-file-nesting-config').nesting_rules
+    -- Nest .py files under corresponding .ipynb files
+    opts.nesting_rules['*.ipynb'] = {
+      files = { '%1%.py' },
+      pattern = '(.*)%.ipynb$'
+    }
     require('neo-tree').setup(opts)
   end,
   opts = {

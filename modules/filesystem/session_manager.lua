@@ -7,6 +7,14 @@ return {
     })
 
   local session_group = vim.api.nvim_create_augroup('SessionManagerHooks', { clear = true })
+  -- sessionwritepre doesnt exist..?
+  vim.api.nvim_create_autocmd('User', {
+    pattern = "SessionWritePre",
+    group = session_group,
+    callback = function()
+      vim.cmd("Neotree close")
+    end,
+    })
   vim.api.nvim_create_autocmd('User', {
     pattern = "SessionLoadPost",
     group = session_group,
