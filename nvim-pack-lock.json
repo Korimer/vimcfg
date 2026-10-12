@@ -8,6 +8,10 @@
       "rev": "4ba26e41990c11620c96c0e1cff20eab65efde4a",
       "src": "https://github.com/goolord/alpha-nvim.git"
     },
+    "barbecue": {
+      "rev": "f7c6fa21e2a7c32576e7a1791774a3736987f467",
+      "src": "https://github.com/Bekaboo/dropbar.nvim.git"
+    },
     "blink-cmp": {
       "rev": "78336bc89ee5365633bcf754d93df01678b5c08f",
       "src": "https://github.com/saghen/blink.cmp.git",
@@ -19,7 +23,7 @@
       "version": ">=0.0.0"
     },
     "blink.cmp": {
-      "rev": "78336bc89ee5365633bcf754d93df01678b5c08f",
+      "rev": "8219b58f1c11a2fb1644d3c7116c509fa8348ec0",
       "src": "https://github.com/saghen/blink.cmp.git"
     },
     "blink.lib": {
@@ -39,11 +43,11 @@
       "src": "https://github.com/j-hui/fidget.nvim.git"
     },
     "gitsigns": {
-      "rev": "851a051e2bd2caba97e23314c68d69f1b1cf5d19",
+      "rev": "aa6cc2d7addb288cfd79a05ac257695d5ff61deb",
       "src": "https://github.com/lewis6991/gitsigns.nvim.git"
     },
     "gitsigns.nvim": {
-      "rev": "070a5d7b985546cc57e1fc61e5bc507fecac6045",
+      "rev": "aa6cc2d7addb288cfd79a05ac257695d5ff61deb",
       "src": "https://github.com/lewis6991/gitsigns.nvim.git"
     },
     "hml": {
@@ -67,7 +71,7 @@
       "src": "https://github.com/lukas-reineke/indent-blankline.nvim.git"
     },
     "iron": {
-      "rev": "0168b419bc7df70cd2d97c2ec8158b6b002450b2",
+      "rev": "5e73b979e83b959b0965cf75ec8ee324afaf3d34",
       "src": "https://github.com/Vigemus/iron.nvim.git"
     },
     "jupytext": {
@@ -95,7 +99,7 @@
       "src": "https://github.com/amansingh-afk/milli.nvim.git"
     },
     "milli.nvim": {
-      "rev": "6e94122fcc783bcee7d30b05cedc53beddb01104",
+      "rev": "b69890078dfde44cf71d192bbb02027f81aff1b1",
       "src": "https://github.com/amansingh-afk/milli.nvim.git"
     },
     "mini.icons": {
@@ -112,7 +116,7 @@
       "version": "3.0.0 - 4.0.0"
     },
     "neo-tree.nvim": {
-      "rev": "162f9b953a692b559afe43e38d60afee81e8e79b",
+      "rev": "d5b8a12b74683ddaefa519ce66a097610672859f",
       "src": "https://github.com/nvim-neo-tree/neo-tree.nvim.git"
     },
     "neoscroll.nvim": {
@@ -148,7 +152,7 @@
       "src": "https://github.com/brenoprata10/nvim-highlight-colors.git"
     },
     "nvim-lspconfig": {
-      "rev": "ffd261c09c3dabd0bf1a438f47a8ae3b22f3c3ff",
+      "rev": "6d27c288ff951e1e94cb5f91c800adeddf0dc0c2",
       "src": "https://github.com/neovim/nvim-lspconfig.git"
     },
     "nvim-surround": {
@@ -157,7 +161,7 @@
       "version": "3.0.0 - 4.0.0"
     },
     "nvim-treesitter": {
-      "rev": "f603a2f4da48728f80257fb5fbb90145fd1dc173",
+      "rev": "1a4f47b03dfe92d28de7d5654c67327ef008c9e6",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter.git"
     },
     "nvim-web-devicons": {
