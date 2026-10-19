@@ -30,6 +30,10 @@
       "rev": "fd9a48ebbe6ec30d5dfcc5b42c243941ccdca1aa",
       "src": "https://github.com/saghen/blink.lib.git"
     },
+    "direnv": {
+      "rev": "9258f9f10c4c729d8296fce0e3ecb12543daad06",
+      "src": "https://github.com/NotAShelf/direnv.nvim.git"
+    },
     "dropbar": {
       "rev": "f7c6fa21e2a7c32576e7a1791774a3736987f467",
       "src": "https://github.com/Bekaboo/dropbar.nvim.git"
@@ -110,6 +114,10 @@
       "rev": "7f867b4980946f115f4ccb922637d70d89a59cb4",
       "src": "https://github.com/mawkler/modicator.nvim.git"
     },
+    "navic": {
+      "rev": "455808fd0fae06e6d70fadfd61432275db8f34ce",
+      "src": "https://github.com/SmiteshP/nvim-navic.git"
+    },
     "neo-tree": {
       "rev": "f3f3bf73414e400cf9fc13fda50f00404a8f8ab1",
       "src": "https://github.com/nvim-neo-tree/neo-tree.nvim.git",
@@ -154,6 +162,14 @@
     "nvim-lspconfig": {
       "rev": "6d27c288ff951e1e94cb5f91c800adeddf0dc0c2",
       "src": "https://github.com/neovim/nvim-lspconfig.git"
+    },
+    "nvim-navbuddy": {
+      "rev": "a34786c77a528519f6b8a142db7609f6e387842d",
+      "src": "https://github.com/SmiteshP/nvim-navbuddy.git"
+    },
+    "nvim-navic": {
+      "rev": "455808fd0fae06e6d70fadfd61432275db8f34ce",
+      "src": "https://github.com/SmiteshP/nvim-navic.git"
     },
     "nvim-surround": {
       "rev": "1098d7b3c34adcfa7feb3289ee434529abd4afd1",
