@@ -6,6 +6,7 @@ return {
     preferred_servers = {
       python = { "basedpyright" },
       java = { "jdtls" },
+      nix = { "nixd" },
     },
     use_vim_lsp_config = true,
   }
