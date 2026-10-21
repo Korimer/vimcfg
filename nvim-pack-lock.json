@@ -106,6 +106,10 @@
       "rev": "b69890078dfde44cf71d192bbb02027f81aff1b1",
       "src": "https://github.com/amansingh-afk/milli.nvim.git"
     },
+    "mini-align": {
+      "rev": "b4b402d0455e022b878c30971e02e0d7780e6d9e",
+      "src": "https://github.com/nvim-mini/mini.align.git"
+    },
     "mini.icons": {
       "rev": "f642e3ba8c12afbc8f32f6d77ef6597eac56786f",
       "src": "https://github.com/nvim-mini/mini.icons.git"
