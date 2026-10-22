@@ -24,12 +24,18 @@ local nixd_config = {
         expr = "import <nixpkgs> { }",
       },
       options = {
-        schnixos = {
+        ["nixos"] = {
           expr = expressionWithVars..".nixos-expr",
         },
-      --  --["home-manager"] = {
-      --  --  expr = home_manager_expr,
-      --  --},
+        ["debug-options"] = {
+          expr = expressionWithVars..".debug-expr"
+        },
+        ["flake-parts-currentSystem"] = {
+          expr = expressionWithVars..".flake-parts-currentSystem"
+        },
+        ["home-manager"] = {
+          expr = expressionWithVars..".home-manager-expr"
+        },
       }
     }
   }
