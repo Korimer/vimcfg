@@ -1,11 +1,6 @@
-cwd:
+{ hostname, username, cwd }:
 let
   flakeExists = (builtins.pathExists (cwd + "/flake.nix"));
-
-  hostNameImpure = builtins.readFile "/etc/hostname";
-  hostName = builtins.replaceStrings ["\n"] [""] hostNameImpure;
-
-  userName = builtins.getEnv "USER";
 
   nixpkgs-expr = import <nixpkgs> {};
 
@@ -14,19 +9,18 @@ let
     flake = if flakeExists
       then builtins.getFlake (toString cwd)
       else {};
-    hasTarget = flake ? nixosConfigurations && flake.nixosConfigurations ? ${hostName};
+    hasTarget = flake ? nixosConfigurations && flake.nixosConfigurations ? ${hostname};
     optionSet = if hasTarget
-      then flake.nixosConfigurations.${hostName}.options
+      then flake.nixosConfigurations.${hostname}.options
       else {};
   in
     optionSet
-    #optionSet
   ;
 
   home-manager-expr =
   let
     flake = builtins.getFlake (toString ./.);
-    userHost = builtins.getEnv "USER" + "@" + builtins.getEnv "HOST";
+    userHost = username "@" + builtins.getEnv "HOST";
     target = if flake ? homeConfigurations && flake.homeConfigurations ? userHost
       then userHost
       else builtins.head (builtins.attrNames (flake.homeConfigurations or {}));

@@ -1,8 +1,15 @@
--- had it up to here with whoever is behind nixd
--- dipshits cannot write something intuitive to save their lives
+-- dogshit kludge to make nixd work even remotely intuitively
 -- oh my god
-local expressionFile = string.format('"%s"', vim.my.fn.fromscriptroot("nixd-expressions.nix"))
-local expressionEval = "(import "..expressionFile.." ./.)"
+local hostname = vim.uv.os_gethostname()
+local username = vim.uv.os_get_passwd().username
+local cwd = "./."
+local expressionFile = vim.my.fn.fromscriptroot("nixd-expressions.nix")
+-- Note cwd that cwd is intentionally unquoted
+-- This allows nix to treat it as a path, rather than a string
+local expressionWithVars = string.format(
+  '((import "%s") { hostname="%s"; username="%s"; cwd=%s; })',
+  expressionFile,   hostname,      username,      cwd
+)
 
 ---@type vim.lsp.Config
 local nixd_config = {
@@ -17,8 +24,8 @@ local nixd_config = {
         expr = "import <nixpkgs> { }",
       },
       options = {
-        nixos = {
-          expr = expressionEval..".nixos-expr",
+        schnixos = {
+          expr = expressionWithVars..".nixos-expr",
         },
       --  --["home-manager"] = {
       --  --  expr = home_manager_expr,
