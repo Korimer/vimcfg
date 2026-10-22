@@ -1,18 +1,48 @@
 { hostname, username, cwd }:
 let
-  flakeExists = (builtins.pathExists (cwd + "/flake.nix"));
+  pEx = path: builtins.pathExists (cwd + "/${path}");
+  rootFile = if pEx "flake.nix" then "flake"
+          else if pEx "configuration.nix" then "config"
+          else if pEx "default.nix" then "default"
+          else "";
+  toImport = { # Lazily evaluated so no errors if doesnt exist
+    flake = builtins.getFlake (toString cwd);
+    config = import (cwd + "/configuration.nix");
+    default = import (cwd + "/default.nix");
+  };
 
+  configuration = if (toImport ? ${rootFile})
+    then toImport.rootFile
+    else {};
+
+  getFirstPresent = options: attrSet: builtins.foldl'
+    (acc: elem:
+     if acc == null && (attrSet ? ${elem})
+       then attrSet.${elem}
+       else acc)
+    null
+    options;
+
+
+  # Outputs
   nixpkgs-expr = import <nixpkgs> {};
 
   nixos-expr =
   let
-    flake = if flakeExists
-      then builtins.getFlake (toString cwd)
-      else {};
-    hasTarget = flake ? nixosConfigurations && flake.nixosConfigurations ? ${hostname};
-    optionSet = if hasTarget
-      then flake.nixosConfigurations.${hostname}.options
-      else {};
+    nixosConfigurations = if configuration ? nixosConfigurations
+      then configuration.nixosConfigurations
+      else {_nonexistent = {};};
+    firstConfiguration = builtins.head (builtins.attrNames nixosConfigurations);
+    target = getFirstPresent
+      ["${hostname}" "default"]
+      nixosConfigurations;
+
+    # Pick host-specific config if it exists
+    # Otherwise pick default config if it exists
+    # Otherwise pick the first (if any) config present
+    optionSet = if target != null
+      then nixosConfigurations.${target}.options
+      else nixosConfigurations.${firstConfiguration};
   in
     optionSet
   ;
