@@ -1,18 +1,14 @@
 { hostname, username, cwd }:
 let
   pEx = path: builtins.pathExists (cwd + "/${path}");
-  rootFile = if pEx "flake.nix" then "flake"
-          else if pEx "configuration.nix" then "config"
-          else if pEx "default.nix" then "default"
-          else "";
-  toImport = { # Lazily evaluated so no errors if doesnt exist
-    flake = builtins.getFlake (toString cwd);
-    config = import (cwd + "/configuration.nix");
-    default = import (cwd + "/default.nix");
-  };
 
-  configuration = if (toImport ? ${rootFile})
-    then toImport.${rootFile}
+  configuration =
+    if pEx "flake.nix" then
+      builtins.getFlake cwd
+    else if pEx "configuration.nix" then
+      import (cwd + "/configuration.nix")
+    else if pEx "default.nix" then
+      import (cwd + "/default.nix")
     else {};
 
   getAny = attrSet: builtins.head (builtins.attrNames attrSet);
