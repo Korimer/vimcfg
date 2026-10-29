@@ -110,6 +110,10 @@
       "rev": "b4b402d0455e022b878c30971e02e0d7780e6d9e",
       "src": "https://github.com/nvim-mini/mini.align.git"
     },
+    "mini.align": {
+      "rev": "a7f24f57e68a72fd6c19e442288ab835a9c40cdd",
+      "src": "https://github.com/nvim-mini/mini.align.git"
+    },
     "mini.icons": {
       "rev": "f642e3ba8c12afbc8f32f6d77ef6597eac56786f",
       "src": "https://github.com/nvim-mini/mini.icons.git"
